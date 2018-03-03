@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ma@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ma">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="barrage"/>
+    <schema id="4" parent="1" name="hibernate"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="jiaowu"/>
+    <schema id="7" parent="1" name="mac"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="power_eval"/>
+    <schema id="11" parent="1" name="schoolhelp"/>
+    <schema id="12" parent="1" name="smartcar"/>
+    <schema id="13" parent="1" name="smartfurniture"/>
+    <schema id="14" parent="1" name="sys"/>
+    <schema id="15" parent="1" name="test"/>
+    <schema id="16" parent="1" name="tyj"/>
+    <schema id="17" parent="1" name="visitormanage"/>
+    <table id="18" parent="2" name="dbsql"/>
+    <table id="19" parent="2" name="device_attr"/>
+    <table id="20" parent="2" name="device_attr_type"/>
+    <table id="21" parent="2" name="device_type"/>
+    <table id="22" parent="2" name="host"/>
+    <table id="23" parent="2" name="object"/>
+    <table id="24" parent="2" name="object_device"/>
+    <column id="25" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="18" name="sql">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="27" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="19" name="device_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="19" name="attrtype_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="19" name="plc_address">
+      <Position>4</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <key id="32" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="20" name="devicetype_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="35" parent="20" name="name">
+      <Position>3</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="36" parent="20" name="field_name">
+      <Position>4</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="37" parent="20" name="label">
+      <Position>5</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="38" parent="20" name="data_type">
+      <Position>6</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <key id="39" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="42" parent="21" name="table_name">
+      <Position>3</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="43" parent="21" name="muliti">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="44" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="22" name="ip">
+      <Position>2</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="47" parent="22" name="port">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="48" parent="22" name="account">
+      <Position>4</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="49" parent="22" name="password">
+      <Position>5</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <key id="50" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="23" name="type_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="53" parent="23" name="database_name">
+      <Position>3</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="54" parent="23" name="name">
+      <Position>4</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="55" parent="23" name="address">
+      <Position>5</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="56" parent="23" name="linkman">
+      <Position>6</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="57" parent="23" name="mobile">
+      <Position>7</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="58" parent="23" name="host_id">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="59" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="24" name="object_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="62" parent="24" name="devicetype_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="63" parent="24" name="code">
+      <Position>4</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <column id="64" parent="24" name="index">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="65" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,85 @@
+drop database IF EXISTS ma;
+create database ma DEFAULT CHARSET utf8  ;
+use ma;
+DROP TABLE IF EXISTS dbsql;
+
+DROP TABLE IF EXISTS device_attr;
+
+DROP TABLE IF EXISTS device_attr_type;
+
+DROP TABLE IF EXISTS device_type;
+
+DROP TABLE IF EXISTS HOST;
+
+DROP TABLE IF EXISTS object;
+
+DROP TABLE IF EXISTS object_device;
+
+CREATE TABLE dbsql
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   `sql`               TEXT,
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE device_attr
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   device_id            INT,
+   attrtype_id          INT,
+   plc_address          VARCHAR(24),
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE device_attr_type
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   devicetype_id        INT,
+   NAME                 VARCHAR(24),
+   field_name           VARCHAR(24),
+   `label`             VARCHAR(24),
+   data_type            VARCHAR(8) COMMENT 'int    float      ',
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE device_type
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   NAME                 VARCHAR(24),
+   table_name           VARCHAR(24),
+   muliti               INT,
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE HOST
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   ip                   VARCHAR(24),
+   PORT                 INT,
+   account              VARCHAR(24),
+   PASSWORD             VARCHAR(24),
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE object
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   host_id              INT,
+   type_id              INT,
+   database_name        VARCHAR(24),
+   NAME                 VARCHAR(24),
+   address              VARCHAR(24),
+   linkman              VARCHAR(24),
+   mobile               VARCHAR(11),
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE object_device
+(
+   id                   INT NOT NULL AUTO_INCREMENT,
+   object_id            INT,
+   devicetype_id        INT,
+   CODE                 VARCHAR(24),
+   `index`                INT,
+   PRIMARY KEY (id)
+);

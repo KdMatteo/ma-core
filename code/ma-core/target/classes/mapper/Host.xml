@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zucc.pump.mapper.HostMapper">
+    <insert id="add" parameterType="Host" keyProperty="id">
+      INSERT  INTO host (ip,port,account,password) VALUES (#{ip},#{port},#{account},#{password})
+    </insert>
+
+    <select id="queryByIpAndPort" resultType="Host">
+        SELECT * FROM host WHERE ip = #{ip} AND port = #{port}
+    </select>
+
+    <update id="changeHost" parameterType="Host">
+      UPDATE host SET ip=#{ip},port=#{port},account = #{account},password =#{password} WHERE id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Integer">
+        DELETE  from host WHERE id = #{id}
+    </delete>
+
+    <select id="getAllList" resultType="Host">
+        SELECT * FROM host
+    </select>
+
+    <select id="queryById" parameterType="Integer" resultType="Host">
+        SELECT * from host WHERE id=#{id}
+    </select>
+</mapper>

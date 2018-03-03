@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="jdbc.properties"/>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="defaultStatementTimeout" value="25" />
+    </settings>
+    <typeAliases>
+        <typeAlias type="cn.zucc.pump.pojo.ObjectPO" alias="ObjectP0"/>
+        <package name="cn.zucc.pump.pojo"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+                <property name="poolMaximumActiveConnections" value="20" />
+                <property name="poolMaximumIdleConnections" value="10" />
+                <property name="poolMaximumCheckoutTime" value="15" />
+                <property name="poolTimeToWait" value="10" />
+                <property name="poolPingQuery" value="select 1 from host" />
+                <property name="poolPingEnabled" value="true" />
+                <property name="poolPingConnectionsNotUsedFor" value="0" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+       <mapper resource="mapper/Host.xml"/>
+        <mapper resource="mapper/Object.xml"/>
+        <mapper resource="mapper/Device_type.xml"/>
+        <mapper resource="mapper/Device_attr_type.xml"/>
+        <mapper resource="mapper/Object_device.xml"/>
+        <mapper resource="mapper/Device_attr.xml"/>
+    </mappers>
+</configuration>
