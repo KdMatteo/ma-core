@@ -46,7 +46,7 @@ create table device_type
    id                   int not null auto_increment,
    name                 varchar(24),
    table_name           varchar(24),
-   muliti               int,
+   multi                int,
    primary key (id)
 );
 
