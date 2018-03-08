@@ -40,8 +40,4 @@ public abstract class BaseServiceImpl<T extends Serializable, E extends Serializ
         return getMapper().updateByPrimaryKey(record);
     }
 
-    @Override
-    public List<T> getAllList() {
-        return getMapper().queryAll();
-    }
 }

@@ -14,12 +14,6 @@ import java.util.List;
  **/
 public interface HostService extends BaseService<Host, Integer>{
 
-    /**
-     * 查询
-     * @param ip
-     * @param port
-     */
-    List<Host> queryByIpAndPort(@Param("ip") String ip, @Param("port") int port);
 
 
 }

@@ -12,10 +12,5 @@ import java.util.List;
  * Description:
  **/
 public interface DeviceTypeService extends BaseService<DeviceType, Integer>{
-    /**
-     * 获取所有数据
-     * @return
-     */
-    List<DeviceType> getAllList();
 
 }

@@ -22,9 +22,4 @@ public interface BaseService<T extends Serializable, E extends Serializable> {
 
     int updateById(T record);
 
-    /**
-     * 获取所有数据
-     * @return
-     */
-    List<T> getAllList();
 }

@@ -11,12 +11,7 @@ import java.util.List;
  * @CreateTime 2018-02-06 22:28
  * Description:
  **/
-public interface ObjectService extends BaseService<WaterObject, Integer> {
-    /**
-     * 通过name查询
-     * @param name
-     */
-    List<WaterObject> queryByName(String name);
+public interface WaterObjectService extends BaseService<WaterObject, Integer> {
 
 
 }
