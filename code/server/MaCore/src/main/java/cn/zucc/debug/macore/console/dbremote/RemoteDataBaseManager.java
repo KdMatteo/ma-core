@@ -97,6 +97,11 @@ public class RemoteDataBaseManager {
         return tableCreator.addTableFields(tableName, getFieldsByAttrTypeList(deviceAttrTypeList));
     }
 
+    /**
+     * 获取字段数组
+     * @param deviceAttrTypeList
+     * @return
+     */
     private static Field[] getFieldsByAttrTypeList(List<DeviceAttrType> deviceAttrTypeList) {
         Field[] fields = new Field[deviceAttrTypeList.size()];
         for (int i = 0; i < deviceAttrTypeList.size(); i++) {

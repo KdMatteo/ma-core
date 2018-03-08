@@ -13,5 +13,5 @@ import java.util.List;
  **/
 public interface WaterObjectService extends BaseService<WaterObject, Integer> {
 
-
+    List<WaterObject> findByHostId(Integer hostId);
 }

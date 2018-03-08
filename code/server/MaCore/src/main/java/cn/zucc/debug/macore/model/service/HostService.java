@@ -14,6 +14,6 @@ import java.util.List;
  **/
 public interface HostService extends BaseService<Host, Integer>{
 
-
+    Host findByIpAndPortAndAccount(String ip, int port, String account);
 
 }

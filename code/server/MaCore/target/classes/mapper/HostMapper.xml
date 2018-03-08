@@ -122,4 +122,11 @@
       c_password = #{password,jdbcType=VARCHAR}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByIpAndAccountAndPassword" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_host
+    where c_ip = #{ip} AND c_port = #{port} AND c_account=#{account}
+  </select>
 </mapper>

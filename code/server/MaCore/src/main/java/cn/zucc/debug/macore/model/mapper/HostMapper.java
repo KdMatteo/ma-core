@@ -2,6 +2,7 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.Host;
+import org.apache.ibatis.annotations.Param;
 
 public interface HostMapper extends BaseMapper<Host, Integer> {
     /**
@@ -51,4 +52,6 @@ public interface HostMapper extends BaseMapper<Host, Integer> {
      * @mbggenerated
      */
     int updateByPrimaryKey(Host record);
+
+    Host selectByIpAndAccountAndPassword(@Param("ip") String ip, @Param("port") Integer port, @Param("account") String account);
 }
