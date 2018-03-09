@@ -1,6 +1,6 @@
 //package cn.zucc.debug.macore.client.controller;
 //
-//import cn.zucc.debug.macore.console.dbremote.RemoteDataBaseManager;
+//import cn.zucc.debug.macore.console.util.RemoteDataBaseManager;
 //import cn.zucc.debug.macore.model.service.*;
 //import cn.zucc.debug.macore.model.pojo.*;
 //import cn.zucc.debug.macore.console.util.TextUtil;

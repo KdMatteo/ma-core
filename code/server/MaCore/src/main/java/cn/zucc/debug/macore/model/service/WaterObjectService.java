@@ -13,5 +13,7 @@ import java.util.List;
  **/
 public interface WaterObjectService extends BaseService<WaterObject, Integer> {
 
-    List<WaterObject> findByHostId(Integer hostId);
+    List<WaterObject>  findByHostIdPager(Integer hostId, Integer pageSize, Integer pageIndex) ;
+
+    WaterObject findByHostIdAndDatabaseName(Integer hostId, String databaseName);
 }

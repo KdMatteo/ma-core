@@ -12,11 +12,11 @@ public interface BaseService<T extends Serializable, E extends Serializable> {
 
     int deleteById(E id);
 
-    int add(T record);
+    int save(T record);
 
     int insertSelective(T record);
 
-    T queryById(E id);
+    T findById(E id);
 
     int updateByPrimaryKeySelective(T record);
 

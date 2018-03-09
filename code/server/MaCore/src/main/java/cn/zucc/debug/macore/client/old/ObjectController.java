@@ -1,6 +1,6 @@
 //package cn.zucc.debug.macore.client.old;
 //
-//import cn.zucc.debug.macore.console.dbremote.RemoteDataBaseManager;
+//import cn.zucc.debug.macore.console.common.RemoteDataBaseManager;
 //import cn.zucc.debug.macore.model.service.ObjectDeviceService;
 //import cn.zucc.debug.macore.model.service.DeviceAttrService;
 //import cn.zucc.debug.macore.model.service.HostService;

@@ -16,7 +16,7 @@ public abstract class BaseServiceImpl<T extends Serializable, E extends Serializ
     }
 
     @Override
-    public int add(T record) {
+    public int save(T record) {
         return getMapper().insert(record);
     }
 
@@ -26,7 +26,7 @@ public abstract class BaseServiceImpl<T extends Serializable, E extends Serializ
     }
 
     @Override
-    public T queryById(E id) {
+    public T findById(E id) {
         return getMapper().selectByPrimaryKey(id);
     }
 

@@ -157,4 +157,18 @@
       c_mobile = #{mobile,jdbcType=VARCHAR}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByHostIdLimit" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_object
+    where c_host_id = #{hostId} LIMIT #{limitFrom}, #{limitCount}
+  </select>
+
+  <select id="selectByHostIdAndDatabaseName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_object
+    where c_host_id = #{hostId} AND c_database_name = #{databaseName}
+  </select>
 </mapper>

@@ -2,6 +2,7 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.WaterObject;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -54,6 +55,7 @@ public interface WaterObjectMapper extends BaseMapper<WaterObject, Integer> {
      */
     int updateByPrimaryKey(WaterObject record);
 
-    List<WaterObject> selectByHostId(Integer hostId);
+    List<WaterObject> selectByHostIdLimit(@Param("hostId") Integer hostId, @Param("limitFrom") Integer limitFrom, @Param("limitCount") Integer limitCount);
 
+    WaterObject selectByHostIdAndDatabaseName(@Param("hostId") Integer hostId, @Param("databaseName") String databaseName);
 }

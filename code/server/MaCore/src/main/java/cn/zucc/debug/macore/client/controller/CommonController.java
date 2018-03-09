@@ -1,7 +1,7 @@
 package cn.zucc.debug.macore.client.controller;
 
 import cn.zucc.debug.frame.ssm.BaseController;
-import org.json.JSONObject;
+import net.sf.json.JSONObject;
 
 public class CommonController extends BaseController {
 

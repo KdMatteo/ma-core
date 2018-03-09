@@ -21,7 +21,12 @@ public class WaterObjectServiceImpl extends BaseServiceImpl<WaterObject, Integer
     }
 
     @Override
-    public List<WaterObject> findByHostId(Integer hostId) {
-        return waterObjectMapper.selectByHostId(hostId);
+    public List<WaterObject> findByHostIdPager(Integer hostId, Integer pageSize, Integer pageIndex) {
+        return waterObjectMapper.selectByHostIdLimit(hostId, (pageIndex-1) * pageSize, pageSize);
+    }
+
+    @Override
+    public WaterObject findByHostIdAndDatabaseName(Integer hostId, String databaseName) {
+        return waterObjectMapper.selectByHostIdAndDatabaseName(hostId, databaseName);
     }
 }

@@ -1,10 +1,11 @@
-package cn.zucc.debug.macore.console.dbremote;
+package cn.zucc.debug.macore.console.util;
 
 import cn.zucc.debug.frame.dbcreate.DBCreator;
 import cn.zucc.debug.frame.dbcreate.TableCreator;
 import cn.zucc.debug.frame.dbcreate.core.StandardDBCreator;
 import cn.zucc.debug.frame.dbcreate.model.Field;
 import cn.zucc.debug.macore.model.pojo.DeviceAttrType;
+import cn.zucc.debug.macore.model.pojo.Host;
 import org.apache.log4j.Logger;
 import java.util.List;
 
@@ -13,6 +14,9 @@ import java.util.List;
  * @Email 754456231@qq.com
  * @Time 2018-02-06 19:40
  * Description:数据库管理类
+ * 调用frame的dbCreator和tableCreator去完成远程数据库管理工作
+ * 将参数层封装成项目pojo对象
+ *
  **/
 public class RemoteDataBaseManager {
     public static final Logger logger = Logger.getLogger(RemoteDataBaseManager.class);
@@ -23,31 +27,35 @@ public class RemoteDataBaseManager {
      * @param databaseName
      * @return
      */
-    public static TableCreator createDataBase(String databaseName, String ip, int port, String account, String password) {
-        DBCreator dbCreator = new StandardDBCreator(ip, port, account, password);
-        return dbCreator.createDatabase(databaseName);
+    public static TableCreator createDataBase(Host host, String databaseName) {
+        if (host != null) {
+            DBCreator dbCreator = new StandardDBCreator(host.getIp(), host.getPort(), host.getAccount(), host.getPassword());
+            return dbCreator.createDatabase(databaseName);
+        }
+        return null;
     }
 
     /**
      * 连接数据库
      */
-    public static TableCreator connectDataBase(String ip, int port, String account, String password, String databaseName) {
-        DBCreator dbCreator = new StandardDBCreator(ip, port, account, password);
-        return dbCreator.chooseDatabase(databaseName);
+    public static TableCreator connectDataBase(Host host, String databaseName) {
+        if (host != null) {
+            DBCreator dbCreator = new StandardDBCreator(host.getIp(), host.getPort(), host.getAccount(), host.getPassword());
+            return dbCreator.chooseDatabase(databaseName);
+        }
+        return null;
     }
 
     /**
      * 删除数据库
-     *
-     * @param ip       ip
-     * @param port     短口
-     * @param account  账号
-     * @param password 密码
      * @param databaseName 数据库名
      */
-    public static boolean deleteDatabase(String ip, int port, String account, String password, String databaseName) {
-        DBCreator dbCreator = new StandardDBCreator(ip, port, account, password);
-        return dbCreator.deleteDatabase(databaseName);
+    public static boolean deleteDatabase(Host host, String databaseName) {
+        if (host != null) {
+            DBCreator dbCreator = new StandardDBCreator(host.getIp(), host.getPort(), host.getAccount(), host.getPassword());
+            return dbCreator.deleteDatabase(databaseName);
+        }
+        return false;
     }
 
     /**
