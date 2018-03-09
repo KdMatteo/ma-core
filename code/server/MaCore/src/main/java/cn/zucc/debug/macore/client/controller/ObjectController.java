@@ -9,13 +9,12 @@ import cn.zucc.debug.macore.model.service.WaterObjectService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RequestMapping("/object")
+@SessionAttributes(value = "username",types={Integer.class})
 @Controller
 public class ObjectController extends CommonController {
 
@@ -27,7 +26,7 @@ public class ObjectController extends CommonController {
 
     /**
      * 获取水厂列表
-     * http://localhost:8080/object/list?host_id=1&page={%22size%22:5,%22index%22:1}&search={}
+     * http://localhost:8080/object/list?page={%22size%22:5,%22index%22:1}&search={}
      *
      * @param hostId
      * @param page
@@ -36,7 +35,7 @@ public class ObjectController extends CommonController {
      */
     @RequestMapping("/list")
     @ResponseBody
-    public String list(@RequestParam("host_id") Integer hostId, @RequestParam("page") String page, @RequestParam("search") String search) {
+    public String list(@ModelAttribute("host_id") Integer hostId, @RequestParam("page") String page, @RequestParam("search") String search) {
         int errorCode = 0;
         String errorMessage = "";
         JSONObject jsonObject = new JSONObject();
@@ -53,7 +52,7 @@ public class ObjectController extends CommonController {
 
     /**
      * 添加水厂（数据库）
-     * test: http://localhost:8080/object/add?host_id=1&database_name=testcreate2&name=test2&address=xxx&linkman=xxx&mobile=123
+     * test: http://localhost:8080/object/add?database_name=testcreate2&name=test2&address=xxx&linkman=xxx&mobile=123
      * @param hostId
      * @param databaseName
      * @param name
@@ -64,7 +63,7 @@ public class ObjectController extends CommonController {
      */
     @RequestMapping("/add")
     @ResponseBody
-    public String add(@RequestParam("host_id") Integer hostId, @RequestParam("database_name") String databaseName,
+    public String add(@ModelAttribute("host_id") Integer hostId, @RequestParam("database_name") String databaseName,
                       @RequestParam("name") String name, @RequestParam("address") String address, @RequestParam("linkman") String linkman,
                       @RequestParam("mobile") String mobile) {
         int errorCode = 0;
@@ -78,14 +77,74 @@ public class ObjectController extends CommonController {
             Host host = hostService.findById(hostId);
             if (RemoteDataBaseManager.createDataBase(host, databaseName) != null) {
                 waterObject = new WaterObject();
-                waterObject.setAddress(address);
                 waterObject.setDatabaseName(databaseName);
                 waterObject.setHostId(hostId);
+                waterObject.setAddress(address);
                 waterObject.setLinkman(linkman);
                 waterObject.setMobile(mobile);
                 waterObject.setName(name);
                 waterObjectService.save(waterObject);
+            } else {
+                errorCode = 2;
+                errorMessage = "create db wrong";
             }
+        }
+        return responseJSON(errorCode, errorMessage, jsonObject);
+    }
+
+    /**
+     * 更新
+     * http://localhost:8080/object/update?id=3&name=test3&address=xxx&linkman=xxx&mobile=123
+     * @param hostId
+     * @param id
+     * @param name
+     * @param address
+     * @param linkman
+     * @param mobile
+     * @return
+     */
+    @RequestMapping("/update")
+    @ResponseBody
+    public String update(@ModelAttribute("host_id") Integer hostId, @RequestParam("id") Integer id, @RequestParam("name") String name,
+                         @RequestParam("address") String address, @RequestParam("linkman") String linkman, @RequestParam("mobile") String mobile) {
+        int errorCode = 0;
+        String errorMessage = "";
+        JSONObject jsonObject = new JSONObject();
+        WaterObject waterObject = waterObjectService.findById(id);
+        if (waterObject == null) {
+            errorCode = 1;
+            errorMessage = "this object is not exist";
+        } else if (!waterObject.getHostId().equals(hostId)) {
+            errorCode = 2;
+            errorMessage = "you are not access to control this object";
+        } else {
+            waterObject.setAddress(address);
+            waterObject.setLinkman(linkman);
+            waterObject.setMobile(mobile);
+            waterObject.setName(name);
+            waterObjectService.updateById(waterObject);
+        }
+        return responseJSON(errorCode, errorMessage, jsonObject);
+    }
+
+    @RequestMapping("/delete")
+    @ResponseBody
+    public String delete(@ModelAttribute("host_id") Integer hostId, @RequestParam("id") Integer id) {
+        int errorCode = 0;
+        String errorMessage = "";
+        JSONObject jsonObject = new JSONObject();
+        WaterObject waterObject = waterObjectService.findById(id);
+        if (waterObject == null) {
+            errorCode = 1;
+            errorMessage = "this object is not exist";
+        } else if (!waterObject.getHostId().equals(hostId)) {
+            errorCode = 2;
+            errorMessage = "you are not access to control this object";
+        } else if (RemoteDataBaseManager.deleteDatabase(hostService.findById(hostId), waterObject.getDatabaseName())){
+            waterObjectService.deleteById(waterObject.getId());
+        } else {
+            errorCode = 3;
+            errorMessage = "delete db wrong";
         }
         return responseJSON(errorCode, errorMessage, jsonObject);
     }

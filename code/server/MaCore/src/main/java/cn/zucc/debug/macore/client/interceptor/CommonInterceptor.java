@@ -19,6 +19,11 @@ public class CommonInterceptor implements HandlerInterceptor {
             message = message + key + " : " + paramsMap.get(key)[0] + "; ";
         }
         System.out.println(message + "}");
+        return accessToken(httpServletRequest, httpServletResponse);
+    }
+
+    private boolean accessToken(HttpServletRequest request, HttpServletResponse response) {
+        request.getSession().setAttribute("host_id", 1);
         return true;
     }
 
