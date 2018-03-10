@@ -22,16 +22,32 @@ public class MyError {
      */
     public static final int ERROR_CODE_REMOTE_WRONG = 3;
 
+    /**
+     * all
+     */
     public static final String MESSAGE_REMOTE_WRONG = "remote db wrong";
-    public static final String MESSAGE_ACCOUNT_NOT_EXIST = "account not exit";
     public static final String MESSAGE_WRONG_PASSWORD = "wrong password";
-    public static final String MESSAGE_OBJECT_ALREADY_EXIST = "this object is already exit";
-    public static final String MESSAGE_OBJECT_NOT_EXIST = "this object is not exit";
+    /**
+     * object
+     */
+    public static final String MESSAGE_OBJECT_ALREADY_EXIST = "this object is already exist";
+    public static final String MESSAGE_ACCOUNT_NOT_EXIST = "account not exist";
+    public static final String MESSAGE_OBJECT_NOT_EXIST = "this object is not exist";
     public static final String MESSAGE_NO_ACCESS_TO_OBJECT_= "you are not access to control this object";
-    public static final String MESSAGE_GROUP_ALREADY_EXIST = "this group already exit";
+    /**
+     * group
+     */
+    public static final String MESSAGE_GROUP_ALREADY_EXIST = "this group already exist";
     public static final String MESSAGE_NO_ACCESS_TO_GROUP = "you are not access to control this group";
-    public static final String MESSAGE_GROUP_NOT_EXIST = "this group is not exit";
-
-
-
+    public static final String MESSAGE_GROUP_NOT_EXIST = "this group is not exist";
+    /**
+     * device type
+     */
+    public static final String MESSAGE_DEVICE_TYPE_ALREADY_EXIST = "this device type already exist";
+    public static final String MESSAGE_DEVICE_TYPE_NOT_EXIST = "this device type not exist";
+    /**
+     * device attr type
+     */
+    public static final String MESSAGE_DEVICE_ATTR_TYPE_ALREADY_EXIST = "this device attr type already exist";
+    public static final String MESSAGE_DEVICE_ATTR_TYPE_NOT_EXIST = "this device attr type not exist";
 }

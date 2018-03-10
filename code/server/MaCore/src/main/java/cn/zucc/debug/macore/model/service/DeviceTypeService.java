@@ -13,4 +13,8 @@ import java.util.List;
  **/
 public interface DeviceTypeService extends BaseService<DeviceType, Integer>{
 
+
+    List<DeviceType> findAll();
+
+    DeviceType findByTableName(String tableName);
 }

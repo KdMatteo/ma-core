@@ -77,6 +77,7 @@ public class GroupController extends CommonController {
 
     /**
      * 更新
+     * http://localhost:8080/group/update?id=1&name=yyy
      * @param hostId
      * @param id
      * @param name
@@ -109,6 +110,7 @@ public class GroupController extends CommonController {
 
     /**
      * 删除
+     * http://localhost:8080/group/delete?id=1
      * @param hostId
      * @param id
      * @return

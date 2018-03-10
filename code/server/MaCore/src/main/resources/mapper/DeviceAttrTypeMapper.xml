@@ -135,4 +135,18 @@
       c_data_type = #{dataType,jdbcType=VARCHAR}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByDevicetypeId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_device_attr_type
+    where c_devicetype_id = #{devicetypeId}
+  </select>
+
+  <select id="selectByDevicetypeIdAndFieldName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_device_attr_type
+    where c_field_name = #{fieldName} and c_devicetype_id = #{devicetypeId}
+  </select>
 </mapper>

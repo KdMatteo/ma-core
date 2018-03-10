@@ -13,4 +13,7 @@ import java.util.List;
  **/
 public interface DeviceAttrTypeService extends BaseService<DeviceAttrType, Integer> {
 
+    List<DeviceAttrType> findByDevicetypeId(Integer devicetypeId);
+
+    DeviceAttrType findByDevicetypeIdAndFieldName(Integer devicetypeId, String fieldName);
 }

@@ -29,11 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GroupController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/GroupController.java">
+      <file leaf-file-name="DeviceAttrTypeController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceAttrTypeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="120" column="28" lean-forward="true" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
+            <state relative-caret-position="138">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceAttrTypeServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,44 +51,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/interceptor/CommonInterceptor.java">
+      <file leaf-file-name="DeviceAttrTypeMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceAttrTypeMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="156">
+              <caret line="57" column="45" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyError.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java">
+      <file leaf-file-name="DeviceAttrTypeMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrTypeMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/ObjectController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="122" column="45" lean-forward="false" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+            <state relative-caret-position="156">
+              <caret line="138" column="62" lean-forward="true" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1520672701227" expanded="true" signature="1350:1466" ph="select from t_device_attr_type" />
+                <marker date="1520672701227" expanded="true" signature="1682:1752" ph="delete from " />
+                <marker date="1520672701227" expanded="true" signature="1985:2295" ph="insert into t_device_attr_type... " />
+                <marker date="1520672701227" expanded="true" signature="3841:4414" ph="update t_dev... " />
+                <marker date="1520672701227" expanded="true" signature="4659:4969" ph="update t_dev... " />
+                <marker date="1520672701227" expanded="true" signature="5050:5125" ph="select from t_object" />
+                <marker date="1520672701227" expanded="true" signature="5050:5169" ph="select from t_device_attr_type" />
+                <marker date="1520672701227" expanded="true" signature="5262:5413" ph="select from t_device_attr_type" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -101,22 +98,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/StandardDBCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/TableCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/StandardTableCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/jdbc/DbAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/ConnectionTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/pojo/Entity.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/util/TextUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/HostController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/old/HostController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/old/ObjectController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceTypeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/ObjectDeviceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/ObjectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/LoginController.java" />
@@ -148,10 +135,20 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/GroupMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/GroupMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/GroupServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/ObjectController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/interceptor/CommonInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/GroupController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceTypeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceTypeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/DeviceTypeMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceTypeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceAttrTypeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrTypeMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceAttrTypeController.java" />
       </list>
     </option>
   </component>
@@ -294,6 +291,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="debug" type="462c0819:PsiDirectoryNode" />
               <item name="frame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="frame" type="462c0819:PsiDirectoryNode" />
+              <item name="dbcreate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="frame" type="462c0819:PsiDirectoryNode" />
+              <item name="dbcreate" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
@@ -700,15 +718,16 @@
       <workItem from="1520492444184" duration="5683000" />
       <workItem from="1520562687117" duration="4686000" />
       <workItem from="1520581812813" duration="4322000" />
-      <workItem from="1520651763348" duration="13126000" />
+      <workItem from="1520651763348" duration="17973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50342000" />
+    <option name="totallyTimeSpent" value="55189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38172922" sideWeight="0.50303954" order="7" side_tool="true" content_ui="tabs" />
@@ -730,10 +749,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41215107" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20801815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2806354" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -783,65 +802,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/pojo/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="196" column="73" lean-forward="false" selection-start-line="196" selection-start-column="73" selection-end-line="196" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/pojo/DBSql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="40" column="21" lean-forward="false" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DBSqlMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DBSqlMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/pojo/Host.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-589">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/old/DeviceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="177" column="52" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/old/HostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="63" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/old/ObjectController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -872,20 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceTypeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/ObjectDeviceService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -909,25 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/ConnectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/HostMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1062,24 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WaterObjectMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="173" column="11" lean-forward="true" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
-          <folding>
-            <marker date="1520664438098" expanded="true" signature="1504:1610" ph="select from t_object" />
-            <marker date="1520664438098" expanded="true" signature="1827:1887" ph="delete from " />
-            <marker date="1520664438098" expanded="true" signature="2118:2490" ph="insert into t_object... " />
-            <marker date="1520664438098" expanded="true" signature="4320:5069" ph="update t_obj... " />
-            <marker date="1520664438098" expanded="true" signature="5312:5698" ph="update t_obj... " />
-            <marker date="1520664438098" expanded="true" signature="5778:5875" ph="select from t_object" />
-            <marker date="1520664438098" expanded="true" signature="5778:6182" ph="select from t_object" />
-            <marker date="1520664438098" expanded="true" signature="6272:6370" ph="select from t_object" />
-            <marker date="1520664438098" expanded="true" signature="6272:6407" ph="select from t_object" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Java/maven/repos/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar!/net/sf/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1175,14 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/util/TextUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
@@ -1219,11 +1124,160 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/GroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="120" column="28" lean-forward="true" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
+        <state relative-caret-position="405">
+          <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WaterObjectMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="165" column="36" lean-forward="true" selection-start-line="165" selection-start-column="36" selection-end-line="165" selection-end-column="36" />
+          <folding>
+            <marker date="1520664438098" expanded="true" signature="1504:1610" ph="select from t_object" />
+            <marker date="1520664438098" expanded="true" signature="1827:1887" ph="delete from " />
+            <marker date="1520664438098" expanded="true" signature="2118:2490" ph="insert into t_object... " />
+            <marker date="1520664438098" expanded="true" signature="4320:5069" ph="update t_obj... " />
+            <marker date="1520664438098" expanded="true" signature="5312:5698" ph="update t_obj... " />
+            <marker date="1520664438098" expanded="true" signature="5778:5875" ph="select from t_object" />
+            <marker date="1520664438098" expanded="true" signature="5778:6182" ph="select from t_object" />
+            <marker date="1520664438098" expanded="true" signature="6272:6370" ph="select from t_object" />
+            <marker date="1520664438098" expanded="true" signature="6272:6407" ph="select from t_object" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="105" column="58" lean-forward="true" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceTypeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceTypeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="125" column="11" lean-forward="true" selection-start-line="120" selection-start-column="2" selection-end-line="125" selection-end-column="11" />
+          <folding>
+            <marker date="1520669861662" expanded="true" signature="1154:1265" ph="select from t_device_type" />
+            <marker date="1520669861662" expanded="true" signature="1481:1546" ph="delete from " />
+            <marker date="1520669861662" expanded="true" signature="1775:1972" ph="insert into t_device_type... " />
+            <marker date="1520669861662" expanded="true" signature="3183:3541" ph="update t_dev... " />
+            <marker date="1520669861662" expanded="true" signature="3782:3979" ph="update t_dev... " />
+            <marker date="1520669861662" expanded="true" signature="4049:4119" ph="select from t_device_type" />
+            <marker date="1520669861662" expanded="true" signature="4197:4305" ph="select from t_device_type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/ConnectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceAttrTypeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="57" column="45" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrTypeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="138" column="62" lean-forward="true" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
+          <folding>
+            <marker date="1520672701227" expanded="true" signature="1350:1466" ph="select from t_device_attr_type" />
+            <marker date="1520672701227" expanded="true" signature="1682:1752" ph="delete from " />
+            <marker date="1520672701227" expanded="true" signature="1985:2295" ph="insert into t_device_attr_type... " />
+            <marker date="1520672701227" expanded="true" signature="3841:4414" ph="update t_dev... " />
+            <marker date="1520672701227" expanded="true" signature="4659:4969" ph="update t_dev... " />
+            <marker date="1520672701227" expanded="true" signature="5050:5125" ph="select from t_object" />
+            <marker date="1520672701227" expanded="true" signature="5050:5169" ph="select from t_device_attr_type" />
+            <marker date="1520672701227" expanded="true" signature="5262:5413" ph="select from t_device_attr_type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceAttrTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

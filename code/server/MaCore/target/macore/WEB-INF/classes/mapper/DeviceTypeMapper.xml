@@ -111,4 +111,17 @@
       c_multi = #{multi,jdbcType=INTEGER}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_device_type
+  </select>
+
+  <select id="selectByTableName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_device_type
+    where c_table_name = #{tableName}
+  </select>
 </mapper>
