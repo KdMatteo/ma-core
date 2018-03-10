@@ -4,6 +4,7 @@ import cn.zucc.debug.frame.ssm.BaseService;
 import cn.zucc.debug.macore.model.pojo.WaterObject;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author szh
@@ -13,7 +14,7 @@ import java.util.List;
  **/
 public interface WaterObjectService extends BaseService<WaterObject, Integer> {
 
-    List<WaterObject>  findByHostIdPager(Integer hostId, Integer pageSize, Integer pageIndex) ;
+    List<WaterObject> findByHostIdPagerAndSearch(Integer hostId, Integer pageSize, Integer pageIndex, Map<String, Object> searchParams) ;
 
     WaterObject findByHostIdAndDatabaseName(Integer hostId, String databaseName);
 }

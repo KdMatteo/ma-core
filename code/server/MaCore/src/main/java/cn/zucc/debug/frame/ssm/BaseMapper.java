@@ -55,5 +55,4 @@ public interface BaseMapper<T extends Serializable, E extends Serializable> {
      */
     int updateByPrimaryKey(T record);
 
-    List<T> queryAll();
 }

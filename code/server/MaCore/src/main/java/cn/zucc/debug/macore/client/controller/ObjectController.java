@@ -1,6 +1,7 @@
 package cn.zucc.debug.macore.client.controller;
 
 import cn.zucc.debug.frame.helper.JSONUtil;
+import cn.zucc.debug.macore.console.common.MyError;
 import cn.zucc.debug.macore.console.util.RemoteDataBaseManager;
 import cn.zucc.debug.macore.model.pojo.Host;
 import cn.zucc.debug.macore.model.pojo.WaterObject;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequestMapping("/object")
-@SessionAttributes(value = "username",types={Integer.class})
+@SessionAttributes(value = "host_id",types={Integer.class})
 @Controller
 public class ObjectController extends CommonController {
 
@@ -26,7 +27,7 @@ public class ObjectController extends CommonController {
 
     /**
      * 获取水厂列表
-     * http://localhost:8080/object/list?page={%22size%22:5,%22index%22:1}&search={}
+     * http://localhost:8080/object/list?page={"size":5,"index":1}&search={"id":1,"name":"test"}
      *
      * @param hostId
      * @param page
@@ -36,18 +37,16 @@ public class ObjectController extends CommonController {
     @RequestMapping("/list")
     @ResponseBody
     public String list(@ModelAttribute("host_id") Integer hostId, @RequestParam("page") String page, @RequestParam("search") String search) {
-        int errorCode = 0;
-        String errorMessage = "";
         JSONObject jsonObject = new JSONObject();
         JSONObject pageJson = JSONObject.fromObject(page);
         JSONObject searchJson = JSONObject.fromObject(search);
-        List<WaterObject> waterObjectList = waterObjectService.findByHostIdPager(hostId, Integer.valueOf(pageJson.get("size").toString()),
-                Integer.valueOf(pageJson.get("index").toString()));
+        List<WaterObject> waterObjectList = waterObjectService.findByHostIdPagerAndSearch(hostId, Integer.valueOf(pageJson.get("size").toString()),
+                Integer.valueOf(pageJson.get("index").toString()), searchJson);
         if (waterObjectList != null) {
             jsonObject.put("data", JSONUtil.fromList(waterObjectList, "*"));
             jsonObject.put("page", pageJson);
         }
-        return responseJSON(errorCode, errorMessage, jsonObject);
+        return success(jsonObject);
     }
 
     /**
@@ -66,13 +65,10 @@ public class ObjectController extends CommonController {
     public String add(@ModelAttribute("host_id") Integer hostId, @RequestParam("database_name") String databaseName,
                       @RequestParam("name") String name, @RequestParam("address") String address, @RequestParam("linkman") String linkman,
                       @RequestParam("mobile") String mobile) {
-        int errorCode = 0;
-        String errorMessage = "";
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findByHostIdAndDatabaseName(hostId, databaseName);
         if (waterObject != null) {
-            errorCode = 1;
-            errorMessage = "this object already exit";
+            return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_ALREADY_EXIST, jsonObject);
         } else {
             Host host = hostService.findById(hostId);
             if (RemoteDataBaseManager.createDataBase(host, databaseName) != null) {
@@ -84,12 +80,11 @@ public class ObjectController extends CommonController {
                 waterObject.setMobile(mobile);
                 waterObject.setName(name);
                 waterObjectService.save(waterObject);
+                return success(jsonObject);
             } else {
-                errorCode = 2;
-                errorMessage = "create db wrong";
+                return responseJSON(MyError.ERROR_CODE_REMOTE_WRONG, MyError.MESSAGE_REMOTE_WRONG, jsonObject);
             }
         }
-        return responseJSON(errorCode, errorMessage, jsonObject);
     }
 
     /**
@@ -107,45 +102,36 @@ public class ObjectController extends CommonController {
     @ResponseBody
     public String update(@ModelAttribute("host_id") Integer hostId, @RequestParam("id") Integer id, @RequestParam("name") String name,
                          @RequestParam("address") String address, @RequestParam("linkman") String linkman, @RequestParam("mobile") String mobile) {
-        int errorCode = 0;
-        String errorMessage = "";
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findById(id);
         if (waterObject == null) {
-            errorCode = 1;
-            errorMessage = "this object is not exist";
+            return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (!waterObject.getHostId().equals(hostId)) {
-            errorCode = 2;
-            errorMessage = "you are not access to control this object";
+            return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_OBJECT_, jsonObject);
         } else {
             waterObject.setAddress(address);
             waterObject.setLinkman(linkman);
             waterObject.setMobile(mobile);
             waterObject.setName(name);
             waterObjectService.updateById(waterObject);
+            return success(jsonObject);
         }
-        return responseJSON(errorCode, errorMessage, jsonObject);
     }
 
     @RequestMapping("/delete")
     @ResponseBody
     public String delete(@ModelAttribute("host_id") Integer hostId, @RequestParam("id") Integer id) {
-        int errorCode = 0;
-        String errorMessage = "";
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findById(id);
         if (waterObject == null) {
-            errorCode = 1;
-            errorMessage = "this object is not exist";
+            return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (!waterObject.getHostId().equals(hostId)) {
-            errorCode = 2;
-            errorMessage = "you are not access to control this object";
+            return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_OBJECT_, jsonObject);
         } else if (RemoteDataBaseManager.deleteDatabase(hostService.findById(hostId), waterObject.getDatabaseName())){
             waterObjectService.deleteById(waterObject.getId());
+            return success(jsonObject);
         } else {
-            errorCode = 3;
-            errorMessage = "delete db wrong";
+            return responseJSON(MyError.ERROR_CODE_REMOTE_WRONG, MyError.MESSAGE_REMOTE_WRONG, jsonObject);
         }
-        return responseJSON(errorCode, errorMessage, jsonObject);
     }
 }

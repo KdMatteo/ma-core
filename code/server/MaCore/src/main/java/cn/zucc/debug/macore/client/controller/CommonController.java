@@ -1,6 +1,7 @@
 package cn.zucc.debug.macore.client.controller;
 
 import cn.zucc.debug.frame.ssm.BaseController;
+import cn.zucc.debug.macore.console.common.MyError;
 import net.sf.json.JSONObject;
 
 public class CommonController extends BaseController {
@@ -20,5 +21,9 @@ public class CommonController extends BaseController {
         jsonObject.put("errorCode", errorCode);
         jsonObject.put("errorMessage", errorMessage);
         return jsonObject.toString();
+    }
+
+    protected String success(JSONObject jsonObject) {
+        return responseJSON(MyError.SUCCESS_CODE, "", jsonObject);
     }
 }

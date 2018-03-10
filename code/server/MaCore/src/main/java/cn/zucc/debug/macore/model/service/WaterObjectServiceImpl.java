@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("waterObjectService")
 public class WaterObjectServiceImpl extends BaseServiceImpl<WaterObject, Integer> implements WaterObjectService {
@@ -21,8 +22,8 @@ public class WaterObjectServiceImpl extends BaseServiceImpl<WaterObject, Integer
     }
 
     @Override
-    public List<WaterObject> findByHostIdPager(Integer hostId, Integer pageSize, Integer pageIndex) {
-        return waterObjectMapper.selectByHostIdLimit(hostId, (pageIndex-1) * pageSize, pageSize);
+    public List<WaterObject> findByHostIdPagerAndSearch(Integer hostId, Integer pageSize, Integer pageIndex, Map<String, Object> searchParams) {
+        return waterObjectMapper.selectByHostIdLimit(hostId, (pageIndex-1) * pageSize, pageSize, searchParams);
     }
 
     @Override

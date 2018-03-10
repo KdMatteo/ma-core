@@ -5,6 +5,7 @@ import cn.zucc.debug.macore.model.pojo.WaterObject;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface WaterObjectMapper extends BaseMapper<WaterObject, Integer> {
     /**
@@ -55,7 +56,8 @@ public interface WaterObjectMapper extends BaseMapper<WaterObject, Integer> {
      */
     int updateByPrimaryKey(WaterObject record);
 
-    List<WaterObject> selectByHostIdLimit(@Param("hostId") Integer hostId, @Param("limitFrom") Integer limitFrom, @Param("limitCount") Integer limitCount);
+    List<WaterObject> selectByHostIdLimit(@Param("hostId") Integer hostId, @Param("limitFrom") Integer limitFrom,
+                                          @Param("limitCount") Integer limitCount,@Param("searchParams") Map<String, Object>searchParams);
 
     WaterObject selectByHostIdAndDatabaseName(@Param("hostId") Integer hostId, @Param("databaseName") String databaseName);
 }

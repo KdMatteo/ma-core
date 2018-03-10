@@ -2,6 +2,10 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.Group;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+import java.util.Map;
 
 public interface GroupMapper extends BaseMapper<Group, Integer> {
     /**
@@ -51,4 +55,10 @@ public interface GroupMapper extends BaseMapper<Group, Integer> {
      * @mbggenerated
      */
     int updateByPrimaryKey(Group record);
+
+    List<Group> selectByObjectIdLimit(@Param("objectId") Integer objectId, @Param("limitFrom") Integer limitFrom,
+                                              @Param("limitCount") Integer limitCount, @Param("searchParams") Map<String, Object>searchParams);
+
+
+    Group selectByObjectIdAndName(@Param("objectId") Integer objectId, @Param("name") String name);
 }

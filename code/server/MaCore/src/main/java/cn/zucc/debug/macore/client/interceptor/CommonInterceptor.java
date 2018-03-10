@@ -22,6 +22,12 @@ public class CommonInterceptor implements HandlerInterceptor {
         return accessToken(httpServletRequest, httpServletResponse);
     }
 
+    /**
+     * 判断token是否正确
+     * @param request
+     * @param response
+     * @return
+     */
     private boolean accessToken(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().setAttribute("host_id", 1);
         return true;

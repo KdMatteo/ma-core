@@ -100,4 +100,28 @@
       c_name = #{name,jdbcType=VARCHAR}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByObjectIdLimit" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_group
+    where c_object_id = #{objectId}
+    <if test="searchParams != null">
+      <foreach collection="searchParams.keys" index="index" item="key">
+        <if test="searchParams[key]!=null and searchParams[key]!=''">
+          and c_${key} = #{searchParams[${key}]}
+        </if>
+      </foreach>
+    </if>
+    LIMIT #{limitFrom}, #{limitCount}
+  </select>
+
+
+  <select id="selectByObjectIdAndName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_group
+    where c_object_id = #{objectId} and c_name = #{name}
+  </select>
+
 </mapper>

@@ -162,7 +162,15 @@
     select
     <include refid="Base_Column_List" />
     from t_object
-    where c_host_id = #{hostId} LIMIT #{limitFrom}, #{limitCount}
+    where c_host_id = #{hostId}
+    <if test="searchParams != null">
+      <foreach collection="searchParams.keys" index="index" item="key">
+        <if test="searchParams[key]!=null and searchParams[key]!=''">
+          and c_${key} = #{searchParams[${key}]}
+        </if>
+      </foreach>
+    </if>
+    LIMIT #{limitFrom}, #{limitCount}
   </select>
 
   <select id="selectByHostIdAndDatabaseName" resultMap="BaseResultMap">

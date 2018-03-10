@@ -1,5 +1,6 @@
 package cn.zucc.debug.macore.client.controller;
 
+import cn.zucc.debug.macore.console.common.MyError;
 import cn.zucc.debug.macore.model.pojo.Host;
 import cn.zucc.debug.macore.model.service.HostService;
 import net.sf.json.JSONObject;
@@ -28,17 +29,13 @@ public class UserController extends CommonController {
     @ResponseBody
     public String login(@RequestParam("ip") String ip, @RequestParam("port") Integer port,
                         @RequestParam("account") String account, @RequestParam("password") String password) {
-        int errorCode = 0;
-        String errorMessage = "";
         Host host = hostService.findByIpAndPortAndAccount(ip, port, account);
         JSONObject jsonObject = new JSONObject();
         if (host == null) {
-            errorCode = 2;
-            errorMessage = "account not exit";
+            return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_ACCOUNT_NOT_EXIST, jsonObject);
         } else if (!host.getPassword().equals(password)){
-            errorCode = 1;
-            errorMessage = "wrong password";
+            return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_WRONG_PASSWORD, jsonObject);
         }
-        return responseJSON(errorCode, errorMessage, jsonObject);
+        return success(jsonObject);
     }
 }
