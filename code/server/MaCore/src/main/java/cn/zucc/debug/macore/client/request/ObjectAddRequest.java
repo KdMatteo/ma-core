@@ -1,6 +1,7 @@
 package cn.zucc.debug.macore.client.request;
 
 public class ObjectAddRequest {
+    private Integer hostId;
 
     private String databaseName;
 
@@ -11,6 +12,14 @@ public class ObjectAddRequest {
     private String linkman;
 
     private String mobile;
+
+    public Integer getHostId() {
+        return hostId;
+    }
+
+    public void setHost_id(Integer hostId) {
+        this.hostId = hostId;
+    }
 
     public String getDatabaseName() {
         return databaseName;

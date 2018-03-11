@@ -4,9 +4,19 @@ import net.sf.json.JSONObject;
 
 public class ObjectListRequest {
 
+    private Integer hostId;
+
     private Page page;
 
     private JSONObject search;
+
+    public Integer getHostId() {
+        return hostId;
+    }
+
+    public void setHost_id(Integer hostId) {
+        this.hostId = hostId;
+    }
 
     public Page getPage() {
         return page;

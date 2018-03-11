@@ -13,13 +13,6 @@ import java.util.Map;
 public class CommonInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-
-        String message = httpServletRequest.getRequestURI() + " : { ";
-        Map<String, String[]> paramsMap = httpServletRequest.getParameterMap();
-        for (String key : paramsMap.keySet()) {
-            message = message + key + " : " + paramsMap.get(key)[0] + "; ";
-        }
-        System.out.println(message + "}");
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         return accessToken(httpServletRequest, httpServletResponse);
     }
@@ -31,7 +24,7 @@ public class CommonInterceptor implements HandlerInterceptor {
      * @return
      */
     private boolean accessToken(HttpServletRequest request, HttpServletResponse response) {
-        request.getSession().setAttribute("host_id", 1);
+        request.getSession().setAttribute("user_id", 1);
         return true;
     }
 

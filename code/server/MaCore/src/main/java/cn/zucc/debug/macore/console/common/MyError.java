@@ -33,12 +33,10 @@ public class MyError {
     public static final String MESSAGE_OBJECT_ALREADY_EXIST = "this object is already exist";
     public static final String MESSAGE_ACCOUNT_NOT_EXIST = "account not exist";
     public static final String MESSAGE_OBJECT_NOT_EXIST = "this object is not exist";
-    public static final String MESSAGE_NO_ACCESS_TO_OBJECT_= "you are not access to control this object";
     /**
      * group
      */
     public static final String MESSAGE_GROUP_ALREADY_EXIST = "this group already exist";
-    public static final String MESSAGE_NO_ACCESS_TO_GROUP = "you are not access to control this group";
     public static final String MESSAGE_GROUP_NOT_EXIST = "this group is not exist";
     /**
      * device type

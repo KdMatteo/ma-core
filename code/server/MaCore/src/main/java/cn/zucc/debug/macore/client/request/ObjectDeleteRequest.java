@@ -11,4 +11,6 @@ public class ObjectDeleteRequest {
     public void setId(Integer id) {
         this.id = id;
     }
+
+
 }

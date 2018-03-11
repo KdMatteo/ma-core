@@ -44,45 +44,62 @@
         </javaClientGenerator>
 
         <!-- 要生成哪些表 -->
-        <table tableName="t_dbsql" domainObjectName="DBSql" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DBSql,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_device_attr" domainObjectName="DeviceAttr" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DeviceAttr,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_device_attr_type" domainObjectName="DeviceAttrType" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DeviceAttrType,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_device_type" domainObjectName="DeviceType" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DeviceType,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_group" domainObjectName="Group" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Group,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_host" domainObjectName="Host" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Host,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_object" domainObjectName="WaterObject" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;WaterObject,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
-        <table tableName="t_object_device" domainObjectName="ObjectDevice" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;ObjectDevice,Integer&gt;" />
-            <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
+        <!--<table tableName="t_dbsql" domainObjectName="DBSql" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DBSql,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_device_attr_type" domainObjectName="DeviceAttrType" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DeviceAttrType,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_device_type" domainObjectName="DeviceType" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DeviceType,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_group" domainObjectName="Group" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Group,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_host" domainObjectName="Host" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Host,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_object" domainObjectName="WaterObject" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;WaterObject,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_object_device" domainObjectName="ObjectDevice" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;ObjectDevice,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+
+        <!--<table tableName="t_device_attr" domainObjectName="DeviceAttr" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;DeviceAttr,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+
+        <!--<table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;User,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_terminal" domainObjectName="Terminal" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Terminal,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
+        <!--<table tableName="t_terminal_attr" domainObjectName="TerminalAttr" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;TerminalAttr,Integer&gt;" />-->
+            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
+        <!--</table>-->
     </context>
 </generatorConfiguration>

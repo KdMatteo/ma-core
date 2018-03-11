@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequestMapping("/group")
-@SessionAttributes(value = "host_id",types={Integer.class})
+//@SessionAttributes(value = "host_id",types={Integer.class})
 @Controller
 public class GroupController extends CommonController {
 
@@ -47,18 +47,15 @@ public class GroupController extends CommonController {
     /**
      * 添加运行单元
      *
-     * @param hostId
      * @return
      */
     @RequestMapping("/add")
     @ResponseBody
-    public String add(@ModelAttribute("host_id") Integer hostId, @RequestBody GroupAddRequest request) {
+    public String add(@RequestBody GroupAddRequest request) {
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findById(request.getObjectId());
         Group group = groupService.findByObjectIdAndName(request.getObjectId(), request.getName());
-        if (waterObject == null || !waterObject.getHostId().equals(hostId)) {
-            return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_GROUP, jsonObject);
-        } else if (group != null) {
+        if (group != null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_GROUP_ALREADY_EXIST, jsonObject);
         } else {
             group = new Group();
@@ -72,29 +69,19 @@ public class GroupController extends CommonController {
     /**
      * 更新
      *
-     * @param hostId
      * @return
      */
     @RequestMapping("/update")
     @ResponseBody
-    public String update(@ModelAttribute("host_id") Integer hostId, @RequestBody GroupUpdateRequest request) {
+    public String update(@RequestBody GroupUpdateRequest request) {
         JSONObject jsonObject = new JSONObject();
         Group group = groupService.findById(request.getId());
         if (group == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_GROUP_NOT_EXIST, jsonObject);
         } else {
-            if (group.getObjectId() == null) {
-                return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_GROUP, jsonObject);
-            } else {
-                WaterObject waterObject = waterObjectService.findById(group.getObjectId());
-                if (waterObject == null || waterObject.getHostId() == null || !waterObject.getHostId().equals(hostId)) {
-                    return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_GROUP, jsonObject);
-                } else {
-                    group.setName(request.getName());
-                    groupService.updateById(group);
-                    return success(jsonObject);
-                }
-            }
+            group.setName(request.getName());
+            groupService.updateById(group);
+            return success(jsonObject);
         }
     }
 
@@ -102,28 +89,18 @@ public class GroupController extends CommonController {
     /**
      * 删除
      *
-     * @param hostId
      * @return
      */
     @RequestMapping("/delete")
     @ResponseBody
-    public String delete(@ModelAttribute("host_id") Integer hostId, @RequestBody GroupDeleteRequest request) {
+    public String delete(@RequestBody GroupDeleteRequest request) {
         JSONObject jsonObject = new JSONObject();
         Group group = groupService.findById(request.getId());
         if (group == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_GROUP_NOT_EXIST, jsonObject);
         } else {
-            if (group.getObjectId() == null) {
-                return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_GROUP, jsonObject);
-            } else {
-                WaterObject waterObject = waterObjectService.findById(group.getObjectId());
-                if (waterObject == null || waterObject.getHostId() == null || !waterObject.getHostId().equals(hostId)) {
-                    return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_GROUP, jsonObject);
-                } else {
-                    groupService.deleteById(request.getId());
-                    return success(jsonObject);
-                }
-            }
+            groupService.deleteById(request.getId());
+            return success(jsonObject);
         }
     }
 }

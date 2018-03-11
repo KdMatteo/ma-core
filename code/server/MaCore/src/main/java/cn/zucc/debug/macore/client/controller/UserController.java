@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/login")
+@RequestMapping("/user")
 @Controller
 public class UserController extends CommonController {
 
@@ -20,7 +20,7 @@ public class UserController extends CommonController {
      * 登录 test url:http://localhost:8080/user/login?ip=localhost&port=3306&account=rot&password=12345
      * @return
      */
-    @RequestMapping("")
+    @RequestMapping("/login")
     @ResponseBody
     public String login(@RequestBody LoginRequest request) {
         Host host = hostService.findByIpAndPortAndAccount(request.getIp(), request.getPort(), request.getAccount());
