@@ -106,14 +106,6 @@
     <include refid="Base_Column_List" />
     from t_group
     where c_object_id = #{objectId}
-    <if test="searchParams != null">
-      <foreach collection="searchParams.keys" index="index" item="key">
-        <if test="searchParams[key]!=null and searchParams[key]!=''">
-          and c_${key} = #{searchParams[${key}]}
-        </if>
-      </foreach>
-    </if>
-    LIMIT #{limitFrom}, #{limitCount}
   </select>
 
 

@@ -56,8 +56,7 @@ public interface GroupMapper extends BaseMapper<Group, Integer> {
      */
     int updateByPrimaryKey(Group record);
 
-    List<Group> selectByObjectIdLimit(@Param("objectId") Integer objectId, @Param("limitFrom") Integer limitFrom,
-                                              @Param("limitCount") Integer limitCount, @Param("searchParams") Map<String, Object>searchParams);
+    List<Group> selectByObjectIdLimit(@Param("objectId") Integer objectId);
 
 
     Group selectByObjectIdAndName(@Param("objectId") Integer objectId, @Param("name") String name);

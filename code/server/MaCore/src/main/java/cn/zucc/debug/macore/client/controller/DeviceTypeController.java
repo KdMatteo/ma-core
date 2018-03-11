@@ -33,7 +33,7 @@ public class DeviceTypeController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         List<DeviceType> deviceTypeList = deviceTypeService.findAll();
         if (deviceTypeList != null) {
-            jsonObject.put("data", JSONUtil.fromList(deviceTypeList, "*"));
+            jsonObject.put("data", JSONUtil.fromList(deviceTypeList, "*", JSONUtil.TYPE_UNDERLINE));
         }
         return success(jsonObject);
     }

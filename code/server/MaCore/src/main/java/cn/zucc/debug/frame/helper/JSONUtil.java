@@ -115,60 +115,84 @@ public class JSONUtil {
 	 *  可以把上面那个多层次的JSON匹配符简单写成"{ params user.{,name,core.{:param1:param2}}}"
 	 * @return JSON文件
 	 */
-	public static JSONArray fromList(List<?> list, String selector) {
+	public static JSONArray fromList(List<?> list, String selector, int type) {
 		JSONArray array = new JSONArray();
 		if (list != null) {
 			for (Object object : list) {
-				array.add(JSONUtil.fromObject(object, selector));
+				JSONObject jsonObject = changeKey(JSONUtil.fromObject(object, selector), type);
+				array.add(jsonObject);
 			}
 		}
 		return array;
 	}
-	
-//	/**
-//	 * 根据选择器去删除JSON文件的内容
-//	 * @param json JSON对象
-//	 * @param selector 选择器
-//	 * @return json文件
-//	 */
-//	public static JSONObject removeFromJson(JSONObject json, String selector) {
-//		String cut = " ";
-//		try {
-//			if(selector.startsWith("{")&&selector.endsWith("}")) {
-//				cut = selector.substring(1, 2);
-//				if(cut.matches("[a-zA-Z]|[}]|[{]|[.]|[*]|[!]")) {
-//					// 分隔符不能是特定符号
-//					throw new Exception("wrong cut char : " + cut);
-//				}
-//				selector = selector.substring(2, selector.length()-1);
-//			}
-//			String[] strs = selector.split(cut);
-//			Map<String, String> parms = new HashMap<String, String> ();
-//			for (String str : strs) {
-//				if (str==null) {
-//					continue;
-//				} else if (str.equals("*")) {
-//					return JSONObject.fromObject(object);
-//				} else if (str.indexOf(".") < 0) {
-//					Object obj = ModelUtil.getValue(object, str);
-//					json = putObject(json, str, obj);						
-//				} else {
-//					int i = str.indexOf(".");
-//					String key = str.substring(0, i);
-//					String value = str.substring(i+1);
-//					if(parms.get(key)!=null) {
-//						value = parms.get(key) + " " + value;
-//					}
-//					parms.put(key, value);
-//				}
-//			}
-//			// 循环下一层
-//			for (String key : parms.keySet()) {
-//				json.put(key, fromObject(ModelUtil.getValue(object, key), parms.get(key)));
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return json;
-//	}
+
+	public static JSONArray fromList(List<?> list, String selector) {
+		return fromList(list, selector, TYPE_NONE);
+	}
+
+
+	public static final int TYPE_NONE = 0;
+
+	public static final int TYPE_CAMEL = 1;
+
+	public static final int TYPE_UNDERLINE = 2;
+
+	/**
+	 * 改变json的key
+	 * @param jsonObject json
+	 * @param type 结果key的类型
+	 * @return
+	 */
+	public static JSONObject changeKey(JSONObject jsonObject, int type) {
+		if (type == TYPE_NONE) {
+			return jsonObject;
+		}
+		JSONObject result = new JSONObject();
+		for (Object key : jsonObject.keySet()) {
+			String strKey = (String)key;
+			if (type == TYPE_CAMEL) {
+				result.put(underlineToCamel(strKey), jsonObject.get(strKey));
+			} else if (type == TYPE_UNDERLINE) {
+				result.put(camelToUnderline(strKey), jsonObject.get(strKey));
+			}
+		}
+		return result;
+	}
+
+	private static String camelToUnderline(String param){
+		if (param==null||"".equals(param.trim())){
+			return "";
+		}
+		int len=param.length();
+		StringBuilder sb=new StringBuilder(len);
+		for (int i = 0; i < len; i++) {
+			char c=param.charAt(i);
+			if (Character.isUpperCase(c)){
+				sb.append('_');
+				sb.append(Character.toLowerCase(c));
+			}else{
+				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
+
+	private static String underlineToCamel(String param){
+		if (param==null||"".equals(param.trim())){
+			return "";
+		}
+		int len=param.length();
+		StringBuilder sb=new StringBuilder(len);
+		for (int i = 0; i < len; i++) {
+			char c=param.charAt(i);
+			if (c == '_'){
+				if (++i<len){
+					sb.append(Character.toUpperCase(param.charAt(i)));
+				}
+			}else{
+				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
 }

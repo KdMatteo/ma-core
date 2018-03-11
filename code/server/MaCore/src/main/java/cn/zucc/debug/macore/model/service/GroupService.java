@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface GroupService extends BaseService<Group, Integer>{
 
-    List<Group> findByObjectIdPagerAndSearch(Integer objectId, Integer pageSize, Integer pageIndex, Map<String, Object> searchParams);
+    List<Group> findByObjectIdSearch(Integer objectId);
 
     Group findByObjectIdAndName(Integer objectId, String name);
 }

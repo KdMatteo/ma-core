@@ -11,6 +11,7 @@ import cn.zucc.debug.macore.model.pojo.Host;
 import cn.zucc.debug.macore.model.pojo.WaterObject;
 import cn.zucc.debug.macore.model.service.HostService;
 import cn.zucc.debug.macore.model.service.WaterObjectService;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,10 +41,12 @@ public class ObjectController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         JSONObject pageJson = JSONObject.fromObject(request.getPage());
         JSONObject searchJson = request.getSearch();
+        Integer total = waterObjectService.countByHostIdAndSearch(hostId, searchJson);
         List<WaterObject> waterObjectList = waterObjectService.findByHostIdPagerAndSearch(hostId, Integer.valueOf(pageJson.get("size").toString()),
                 Integer.valueOf(pageJson.get("index").toString()), searchJson);
         if (waterObjectList != null) {
-            jsonObject.put("data", JSONUtil.fromList(waterObjectList, "*"));
+            jsonObject.put("data", JSONUtil.fromList(waterObjectList, "*", JSONUtil.TYPE_UNDERLINE));
+            pageJson.put("total", total);
             jsonObject.put("page", pageJson);
         }
         return success(jsonObject);

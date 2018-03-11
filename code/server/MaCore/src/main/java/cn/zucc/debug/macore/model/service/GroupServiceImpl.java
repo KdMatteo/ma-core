@@ -22,8 +22,8 @@ public class GroupServiceImpl extends BaseServiceImpl<Group, Integer> implements
     }
 
     @Override
-    public List<Group> findByObjectIdPagerAndSearch(Integer objectId, Integer pageSize, Integer pageIndex, Map<String, Object> searchParams) {
-        return groupMapper.selectByObjectIdLimit(objectId, (pageIndex-1) * pageSize, pageSize, searchParams);
+    public List<Group> findByObjectIdSearch(Integer objectId) {
+        return groupMapper.selectByObjectIdLimit(objectId);
     }
 
     @Override

@@ -34,7 +34,7 @@ public class DeviceAttrTypeController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         List<DeviceAttrType> deviceAttrTypeList = deviceAttrTypeService.findByDevicetypeId(request.getDevicetypeId());
         if (deviceAttrTypeList != null) {
-            jsonObject.put("data", JSONUtil.fromList(deviceAttrTypeList, "*"));
+            jsonObject.put("data", JSONUtil.fromList(deviceAttrTypeList, "*", JSONUtil.TYPE_UNDERLINE));
         }
         return success(jsonObject);
     }

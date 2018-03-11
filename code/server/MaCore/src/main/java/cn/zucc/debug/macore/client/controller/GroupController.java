@@ -37,13 +37,9 @@ public class GroupController extends CommonController {
     @ResponseBody
     public String list(@RequestBody GroupListRequest request) {
         JSONObject jsonObject = new JSONObject();
-        JSONObject pageJson = JSONObject.fromObject(request.getPage());
-        JSONObject searchJson = JSONObject.fromObject(request.getSearch());
-        List<Group> groupList = groupService.findByObjectIdPagerAndSearch(request.getObjectId(), Integer.valueOf(pageJson.get("size").toString()),
-                Integer.valueOf(pageJson.get("index").toString()), searchJson);
+        List<Group> groupList = groupService.findByObjectIdSearch(request.getObjectId());
         if (groupList != null) {
             jsonObject.put("data", JSONUtil.fromList(groupList, "*"));
-            jsonObject.put("page", pageJson);
         }
         return success(jsonObject);
     }

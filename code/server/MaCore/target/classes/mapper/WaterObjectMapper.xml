@@ -173,6 +173,21 @@
     LIMIT #{limitFrom}, #{limitCount}
   </select>
 
+
+  <select id="countByHostId" resultType="java.lang.Integer">
+    select
+      count(*)
+    from t_object
+    where c_host_id = #{hostId}
+    <if test="searchParams != null">
+      <foreach collection="searchParams.keys" index="index" item="key">
+        <if test="searchParams[key]!=null and searchParams[key]!=''">
+          and c_${key} = #{searchParams[${key}]}
+        </if>
+      </foreach>
+    </if>
+  </select>
+
   <select id="selectByHostIdAndDatabaseName" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

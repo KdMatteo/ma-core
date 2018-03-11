@@ -14,6 +14,10 @@ drop table if exists t_object;
 
 drop table if exists t_object_device;
 
+drop table if exists t_terminal;
+
+drop table if exists t_terminal_attr;
+
 create table t_dbsql
 (
    c_id                 int not null auto_increment,
@@ -26,7 +30,6 @@ create table t_device_attr
    c_id                 int not null auto_increment,
    c_device_id          int,
    c_attrtype_id        int,
-   c_plc_address        varchar(24),
    primary key (c_id)
 );
 
@@ -89,6 +92,26 @@ create table t_object_device
    c_devicetype_id      int,
    c_code               varchar(24),
    c_index              int,
+   primary key (c_id)
+);
+
+create table t_terminal
+(
+   c_id                 int not null auto_increment,
+   c_object_id          int,
+   c_code               varchar(24),
+   c_name               varchar(24),
+   c_ip                 varchar(24),
+   c_port               int,
+   primary key (c_id)
+);
+
+create table t_terminal_attr
+(
+   c_id                 int not null auto_increment,
+   c_terminal_id        int,
+   c_deviceattr_id      int,
+   c_plc_address        varchar(24),
    primary key (c_id)
 );
 
