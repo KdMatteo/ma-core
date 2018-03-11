@@ -1,18 +1,17 @@
 package cn.zucc.debug.macore.client.controller;
 
 import cn.zucc.debug.frame.helper.JSONUtil;
+import cn.zucc.debug.macore.client.request.DeviceAttrTypeAddRequest;
+import cn.zucc.debug.macore.client.request.DeviceAttrTypeDeleteRequest;
+import cn.zucc.debug.macore.client.request.DeviceAttrTypeListRequest;
+import cn.zucc.debug.macore.client.request.DeviceAttrTypeUpdateRequest;
 import cn.zucc.debug.macore.console.common.MyError;
 import cn.zucc.debug.macore.model.pojo.DeviceAttrType;
-import cn.zucc.debug.macore.model.pojo.DeviceType;
 import cn.zucc.debug.macore.model.service.DeviceAttrTypeService;
-import cn.zucc.debug.macore.model.service.DeviceTypeService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,15 +25,14 @@ public class DeviceAttrTypeController extends CommonController {
 
     /**
      * 获取列表
-     * http://localhost:8080/deviceAttrType/list?devicetype_id=1
      *
      * @return
      */
     @RequestMapping("/list")
     @ResponseBody
-    public String list(@RequestParam("devicetype_id") Integer devicetypeId) {
+    public String list(@RequestBody DeviceAttrTypeListRequest request) {
         JSONObject jsonObject = new JSONObject();
-        List<DeviceAttrType> deviceAttrTypeList = deviceAttrTypeService.findByDevicetypeId(devicetypeId);
+        List<DeviceAttrType> deviceAttrTypeList = deviceAttrTypeService.findByDevicetypeId(request.getDevicetypeId());
         if (deviceAttrTypeList != null) {
             jsonObject.put("data", JSONUtil.fromList(deviceAttrTypeList, "*"));
         }
@@ -43,31 +41,24 @@ public class DeviceAttrTypeController extends CommonController {
 
     /**
      * 添加
-     * http://localhost:8080/deviceAttrType/add?devicetype_id=1&name=param3&field_name=c_param3&data_type=int&label=param3
      *
-     * @param devicetypeId
-     * @param name
-     * @param label
-     * @param dataType
-     * @param fieldName
      * @return
      */
     @RequestMapping("/add")
     @ResponseBody
-    public String add(@RequestParam("devicetype_id") Integer devicetypeId, @RequestParam("name") String name,
-                      @RequestParam("label") String label, @RequestParam("data_type") String dataType,
-                      @RequestParam("field_name") String fieldName) {
+    public String add(@RequestBody DeviceAttrTypeAddRequest request) {
         JSONObject jsonObject = new JSONObject();
-        DeviceAttrType deviceAttrType = deviceAttrTypeService.findByDevicetypeIdAndFieldName(devicetypeId, fieldName);
+        DeviceAttrType deviceAttrType = deviceAttrTypeService.findByDevicetypeIdAndFieldName(request.getDevicetypeId(),
+                request.getFieldName());
         if (deviceAttrType != null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_ATTR_TYPE_ALREADY_EXIST, jsonObject);
         } else {
             deviceAttrType = new DeviceAttrType();
-            deviceAttrType.setDataType(dataType);
-            deviceAttrType.setDevicetypeId(devicetypeId);
-            deviceAttrType.setFieldName(fieldName);
-            deviceAttrType.setLabel(label);
-            deviceAttrType.setName(name);
+            deviceAttrType.setDataType(request.getDataType());
+            deviceAttrType.setDevicetypeId(request.getDevicetypeId());
+            deviceAttrType.setFieldName(request.getFieldName());
+            deviceAttrType.setLabel(request.getLabel());
+            deviceAttrType.setName(request.getName());
             deviceAttrTypeService.save(deviceAttrType);
             return success(jsonObject);
         }
@@ -75,29 +66,21 @@ public class DeviceAttrTypeController extends CommonController {
 
     /**
      * 更新
-     * http://localhost:8080/deviceAttrType/update?id=3&name=param3&field_name=c_param3&data_type=varchar&label=param3
      *
-     * @param id
-     * @param name
-     * @param label
-     * @param dataType
-     * @param fieldName
      * @return
      */
     @RequestMapping("/update")
     @ResponseBody
-    public String update(@RequestParam("id") Integer id, @RequestParam("name") String name,
-                      @RequestParam("label") String label, @RequestParam("data_type") String dataType,
-                      @RequestParam("field_name") String fieldName) {
+    public String update(@RequestBody DeviceAttrTypeUpdateRequest request) {
         JSONObject jsonObject = new JSONObject();
-        DeviceAttrType deviceAttrType = deviceAttrTypeService.findById(id);
+        DeviceAttrType deviceAttrType = deviceAttrTypeService.findById(request.getId());
         if (deviceAttrType == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_ATTR_TYPE_NOT_EXIST, jsonObject);
         } else {
-            deviceAttrType.setDataType(dataType);
-            deviceAttrType.setFieldName(fieldName);
-            deviceAttrType.setLabel(label);
-            deviceAttrType.setName(name);
+            deviceAttrType.setDataType(request.getDataType());
+            deviceAttrType.setFieldName(request.getFieldName());
+            deviceAttrType.setLabel(request.getLabel());
+            deviceAttrType.setName(request.getName());
             deviceAttrTypeService.updateById(deviceAttrType);
             return success(jsonObject);
         }
@@ -106,20 +89,18 @@ public class DeviceAttrTypeController extends CommonController {
 
     /**
      * 删除
-     * http://localhost:8080/deviceAttrType/delete?id=4
      *
-     * @param id
      * @return
      */
     @RequestMapping("/delete")
     @ResponseBody
-    public String delete(@RequestParam("id") Integer id) {
+    public String delete(@RequestBody DeviceAttrTypeDeleteRequest request) {
         JSONObject jsonObject = new JSONObject();
-        DeviceAttrType deviceAttrType = deviceAttrTypeService.findById(id);
+        DeviceAttrType deviceAttrType = deviceAttrTypeService.findById(request.getId());
         if (deviceAttrType == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_ATTR_TYPE_NOT_EXIST, jsonObject);
         } else {
-            deviceAttrTypeService.deleteById(id);
+            deviceAttrTypeService.deleteById(request.getId());
             return success(jsonObject);
         }
     }

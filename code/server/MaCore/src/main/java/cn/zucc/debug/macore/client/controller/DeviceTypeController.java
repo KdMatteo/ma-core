@@ -1,13 +1,12 @@
 package cn.zucc.debug.macore.client.controller;
 
 import cn.zucc.debug.frame.helper.JSONUtil;
+import cn.zucc.debug.macore.client.request.DeviceTypeAddRequest;
+import cn.zucc.debug.macore.client.request.DeviceTypeDeleteRequest;
+import cn.zucc.debug.macore.client.request.DeviceTypeUpdateRequest;
 import cn.zucc.debug.macore.console.common.MyError;
 import cn.zucc.debug.macore.model.pojo.DeviceType;
-import cn.zucc.debug.macore.model.pojo.Group;
-import cn.zucc.debug.macore.model.pojo.WaterObject;
 import cn.zucc.debug.macore.model.service.DeviceTypeService;
-import cn.zucc.debug.macore.model.service.GroupService;
-import cn.zucc.debug.macore.model.service.WaterObjectService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +24,6 @@ public class DeviceTypeController extends CommonController {
 
     /**
      * 获取列表
-     * http://localhost:8080/deviceType/list
      *
      * @return
      */
@@ -42,26 +40,21 @@ public class DeviceTypeController extends CommonController {
 
     /**
      * 添加
-     * http://localhost:8080/deviceType/add?name=pump&table_name=pump&multi=1
      *
-     * @param name
-     * @param multi
-     * @param tableName
      * @return
      */
     @RequestMapping("/add")
     @ResponseBody
-    public String add(@RequestParam("name") String name, @RequestParam("multi") Integer multi,
-                      @RequestParam("table_name") String tableName) {
+    public String add(@RequestBody DeviceTypeAddRequest request) {
         JSONObject jsonObject = new JSONObject();
-        DeviceType deviceType = deviceTypeService.findByTableName(tableName);
+        DeviceType deviceType = deviceTypeService.findByTableName(request.getTableName());
         if (deviceType != null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_TYPE_ALREADY_EXIST, jsonObject);
         } else {
             deviceType = new DeviceType();
-            deviceType.setMulti(multi);
-            deviceType.setName(name);
-            deviceType.setTableName(tableName);
+            deviceType.setMulti(request.getMulti());
+            deviceType.setName(request.getName());
+            deviceType.setTableName(request.getTableName());
             deviceTypeService.save(deviceType);
             return success(jsonObject);
         }
@@ -69,25 +62,20 @@ public class DeviceTypeController extends CommonController {
 
     /**
      * 更新
-     * http://localhost:8080/deviceType/update?id=1&name=pump&table_name=t_pump&multi=1
      *
-     * @param name
-     * @param multi
-     * @param tableName
      * @return
      */
     @RequestMapping("/update")
     @ResponseBody
-    public String update(@RequestParam("id") Integer id, @RequestParam("name") String name,
-                         @RequestParam("multi") Integer multi, @RequestParam("table_name") String tableName) {
+    public String update(@RequestBody DeviceTypeUpdateRequest request) {
         JSONObject jsonObject = new JSONObject();
-        DeviceType deviceType = deviceTypeService.findById(id);
+        DeviceType deviceType = deviceTypeService.findById(request.getId());
         if (deviceType == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_TYPE_NOT_EXIST, jsonObject);
         } else {
-            deviceType.setMulti(multi);
-            deviceType.setName(name);
-            deviceType.setTableName(tableName);
+            deviceType.setMulti(request.getMulti());
+            deviceType.setName(request.getName());
+            deviceType.setTableName(request.getTableName());
             deviceTypeService.updateById(deviceType);
             return success(jsonObject);
         }
@@ -96,20 +84,18 @@ public class DeviceTypeController extends CommonController {
 
     /**
      * 删除
-     * http://localhost:8080/deviceType/delete?id=2
      *
-     * @param id
      * @return
      */
     @RequestMapping("/delete")
     @ResponseBody
-    public String delete(@RequestParam("id") Integer id) {
+    public String delete(@RequestBody DeviceTypeDeleteRequest request) {
         JSONObject jsonObject = new JSONObject();
-        DeviceType deviceType = deviceTypeService.findById(id);
+        DeviceType deviceType = deviceTypeService.findById(request.getId());
         if (deviceType == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_TYPE_NOT_EXIST, jsonObject);
         } else {
-            deviceTypeService.deleteById(id);
+            deviceTypeService.deleteById(request.getId());
             return success(jsonObject);
         }
     }

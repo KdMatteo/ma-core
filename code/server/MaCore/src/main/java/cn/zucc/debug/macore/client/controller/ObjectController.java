@@ -1,6 +1,10 @@
 package cn.zucc.debug.macore.client.controller;
 
 import cn.zucc.debug.frame.helper.JSONUtil;
+import cn.zucc.debug.macore.client.request.ObjectAddRequest;
+import cn.zucc.debug.macore.client.request.ObjectDeleteRequest;
+import cn.zucc.debug.macore.client.request.ObjectListRequest;
+import cn.zucc.debug.macore.client.request.ObjectUpdateRequest;
 import cn.zucc.debug.macore.console.common.MyError;
 import cn.zucc.debug.macore.console.util.RemoteDataBaseManager;
 import cn.zucc.debug.macore.model.pojo.Host;
@@ -27,19 +31,15 @@ public class ObjectController extends CommonController {
 
     /**
      * 获取水厂列表
-     * http://localhost:8080/object/list?page={"size":5,"index":1}&search={"id":1,"name":"test"}
      *
-     * @param hostId
-     * @param page
-     * @param search
      * @return
      */
     @RequestMapping("/list")
     @ResponseBody
-    public String list(@ModelAttribute("host_id") Integer hostId, @RequestParam("page") String page, @RequestParam("search") String search) {
+    public String list(@ModelAttribute("host_id") Integer hostId, @RequestBody ObjectListRequest request) {
         JSONObject jsonObject = new JSONObject();
-        JSONObject pageJson = JSONObject.fromObject(page);
-        JSONObject searchJson = JSONObject.fromObject(search);
+        JSONObject pageJson = JSONObject.fromObject(request.getPage());
+        JSONObject searchJson = request.getSearch();
         List<WaterObject> waterObjectList = waterObjectService.findByHostIdPagerAndSearch(hostId, Integer.valueOf(pageJson.get("size").toString()),
                 Integer.valueOf(pageJson.get("index").toString()), searchJson);
         if (waterObjectList != null) {
@@ -51,34 +51,26 @@ public class ObjectController extends CommonController {
 
     /**
      * 添加水厂（数据库）
-     * test: http://localhost:8080/object/add?database_name=testcreate2&name=test2&address=xxx&linkman=xxx&mobile=123
-     * @param hostId
-     * @param databaseName
-     * @param name
-     * @param address
-     * @param linkman
-     * @param mobile
+     *
      * @return
      */
     @RequestMapping("/add")
     @ResponseBody
-    public String add(@ModelAttribute("host_id") Integer hostId, @RequestParam("database_name") String databaseName,
-                      @RequestParam("name") String name, @RequestParam("address") String address, @RequestParam("linkman") String linkman,
-                      @RequestParam("mobile") String mobile) {
+    public String add(@ModelAttribute("host_id") Integer hostId, @RequestBody ObjectAddRequest request) {
         JSONObject jsonObject = new JSONObject();
-        WaterObject waterObject = waterObjectService.findByHostIdAndDatabaseName(hostId, databaseName);
+        WaterObject waterObject = waterObjectService.findByHostIdAndDatabaseName(hostId, request.getDatabaseName());
         if (waterObject != null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_ALREADY_EXIST, jsonObject);
         } else {
             Host host = hostService.findById(hostId);
-            if (RemoteDataBaseManager.createDataBase(host, databaseName) != null) {
+            if (RemoteDataBaseManager.createDataBase(host, request.getDatabaseName()) != null) {
                 waterObject = new WaterObject();
-                waterObject.setDatabaseName(databaseName);
+                waterObject.setDatabaseName(request.getDatabaseName());
                 waterObject.setHostId(hostId);
-                waterObject.setAddress(address);
-                waterObject.setLinkman(linkman);
-                waterObject.setMobile(mobile);
-                waterObject.setName(name);
+                waterObject.setAddress(request.getAddress());
+                waterObject.setLinkman(request.getLinkman());
+                waterObject.setMobile(request.getMobile());
+                waterObject.setName(request.getName());
                 waterObjectService.save(waterObject);
                 return success(jsonObject);
             } else {
@@ -89,30 +81,23 @@ public class ObjectController extends CommonController {
 
     /**
      * 更新
-     * http://localhost:8080/object/update?id=3&name=test3&address=xxx&linkman=xxx&mobile=123
-     * @param hostId
-     * @param id
-     * @param name
-     * @param address
-     * @param linkman
-     * @param mobile
+     *
      * @return
      */
     @RequestMapping("/update")
     @ResponseBody
-    public String update(@ModelAttribute("host_id") Integer hostId, @RequestParam("id") Integer id, @RequestParam("name") String name,
-                         @RequestParam("address") String address, @RequestParam("linkman") String linkman, @RequestParam("mobile") String mobile) {
+    public String update(@ModelAttribute("host_id") Integer hostId, @RequestBody ObjectUpdateRequest request) {
         JSONObject jsonObject = new JSONObject();
-        WaterObject waterObject = waterObjectService.findById(id);
+        WaterObject waterObject = waterObjectService.findById(request.getId());
         if (waterObject == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (!waterObject.getHostId().equals(hostId)) {
             return responseJSON(MyError.ERROR_CODE_NOT_ACCESS, MyError.MESSAGE_NO_ACCESS_TO_OBJECT_, jsonObject);
         } else {
-            waterObject.setAddress(address);
-            waterObject.setLinkman(linkman);
-            waterObject.setMobile(mobile);
-            waterObject.setName(name);
+            waterObject.setAddress(request.getAddress());
+            waterObject.setLinkman(request.getLinkman());
+            waterObject.setMobile(request.getMobile());
+            waterObject.setName(request.getName());
             waterObjectService.updateById(waterObject);
             return success(jsonObject);
         }
@@ -120,9 +105,9 @@ public class ObjectController extends CommonController {
 
     @RequestMapping("/delete")
     @ResponseBody
-    public String delete(@ModelAttribute("host_id") Integer hostId, @RequestParam("id") Integer id) {
+    public String delete(@ModelAttribute("host_id") Integer hostId, @RequestBody ObjectDeleteRequest request) {
         JSONObject jsonObject = new JSONObject();
-        WaterObject waterObject = waterObjectService.findById(id);
+        WaterObject waterObject = waterObjectService.findById(request.getId());
         if (waterObject == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (!waterObject.getHostId().equals(hostId)) {
