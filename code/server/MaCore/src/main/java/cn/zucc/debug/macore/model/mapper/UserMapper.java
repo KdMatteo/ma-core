@@ -2,6 +2,7 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper extends BaseMapper<User, Integer> {
     /**
@@ -51,4 +52,6 @@ public interface UserMapper extends BaseMapper<User, Integer> {
      * @mbggenerated
      */
     int updateByPrimaryKey(User record);
+
+    User selectByAccount(@Param("account") String account);
 }
