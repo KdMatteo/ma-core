@@ -18,6 +18,8 @@ drop table if exists t_terminal;
 
 drop table if exists t_terminal_attr;
 
+drop table if exists t_user;
+
 create table t_dbsql
 (
    c_id                 int not null auto_increment,
@@ -112,6 +114,14 @@ create table t_terminal_attr
    c_terminal_id        int,
    c_deviceattr_id      int,
    c_plc_address        varchar(24),
+   primary key (c_id)
+);
+
+create table t_user
+(
+   c_id                 int not null auto_increment,
+   c_account            varchar(24),
+   c_password           varchar(24),
    primary key (c_id)
 );
 
