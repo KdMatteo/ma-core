@@ -3,6 +3,8 @@ package cn.zucc.debug.macore.model.service;
 import cn.zucc.debug.frame.ssm.BaseService;
 import cn.zucc.debug.macore.model.pojo.DeviceAttr;
 
+import java.util.List;
+
 
 /**
  * @Author szh
@@ -13,6 +15,6 @@ import cn.zucc.debug.macore.model.pojo.DeviceAttr;
 public interface DeviceAttrService extends BaseService<DeviceAttr, Integer>{
 
 
-
+    List<DeviceAttr> findByDeviceId(Integer deviceId);
 
 }

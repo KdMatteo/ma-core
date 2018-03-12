@@ -135,4 +135,23 @@
       c_index = #{index,jdbcType=INTEGER}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByObjectIdAndGroupId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_object_device
+    where c_object_id = #{objectId}
+    and c_group_id = #{groupId}
+    group by c_index desc
+  </select>
+
+  <select id="selectByObjectIdAndGroupIdAndDevicetypeIdId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_object_device
+    where c_object_id = #{objectId}
+    and c_group_id = #{groupId}
+    and c_devicetype_id = #{devicetypeId}
+    group by c_index desc
+  </select>
 </mapper>

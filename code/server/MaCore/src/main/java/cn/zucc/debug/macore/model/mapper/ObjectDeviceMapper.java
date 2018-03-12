@@ -2,6 +2,9 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.ObjectDevice;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ObjectDeviceMapper extends BaseMapper<ObjectDevice, Integer> {
     /**
@@ -51,4 +54,9 @@ public interface ObjectDeviceMapper extends BaseMapper<ObjectDevice, Integer> {
      * @mbggenerated
      */
     int updateByPrimaryKey(ObjectDevice record);
+
+    List<ObjectDevice> selectByObjectIdAndGroupId(@Param("objectId") Integer objectId, @Param("objectId") Integer groupId);
+
+    List<ObjectDevice> selectByObjectIdAndGroupIdAndDevicetypeId(@Param("objectId") Integer objectId, @Param("objectId") Integer groupId,
+                                                         @Param("devicetypeId") Integer devicetypeId);
 }

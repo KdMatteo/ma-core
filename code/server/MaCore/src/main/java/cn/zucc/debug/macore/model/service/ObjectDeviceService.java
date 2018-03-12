@@ -15,4 +15,8 @@ import java.util.List;
 public interface ObjectDeviceService extends BaseService<ObjectDevice, Integer>{
 
 
+    List<ObjectDevice> findByObjectIdAndGroupId(Integer objectId, Integer groupId);
+
+    List<ObjectDevice> findByObjectIdAndGroupIdAndDevicetypeId(Integer objectId, Integer groupId, Integer devicetypeId);
+
 }
