@@ -27,6 +27,12 @@ public class MyError {
      */
     public static final String MESSAGE_REMOTE_WRONG = "remote db wrong";
     public static final String MESSAGE_WRONG_PASSWORD = "wrong password";
+
+    /**
+     * host
+     */
+    public static final String MESSAGE_HOST_ALREADY_EXIST = "this host is already exist";
+    public static final String MESSAGE_HOST_NOT_EXIST = "this host is not exist";
     /**
      * object
      */
@@ -48,4 +54,10 @@ public class MyError {
      */
     public static final String MESSAGE_DEVICE_ATTR_TYPE_ALREADY_EXIST = "this device attr type already exist";
     public static final String MESSAGE_DEVICE_ATTR_TYPE_NOT_EXIST = "this device attr type not exist";
+
+    /**
+     * device
+     */
+    public static final String MESSAGE_DEVICE_ALREADY_EXIST = "this device already exist";
+    public static final String MESSAGE_DEVICE_NOT_EXIST = "this device not exist";
 }

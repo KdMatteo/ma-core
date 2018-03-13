@@ -32,8 +32,28 @@
       <file leaf-file-name="DeviceController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="122" column="7" lean-forward="true" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceDeleteRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceDeleteRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyError.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="60" column="75" lean-forward="false" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -42,8 +62,8 @@
       <file leaf-file-name="DeviceAttrServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+            <state relative-caret-position="190">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="e#764#765#0" expanded="true" />
                 <element signature="e#830#831#0" expanded="true" />
@@ -55,7 +75,7 @@
       <file leaf-file-name="DeviceAttrMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceAttrMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
+            <state relative-caret-position="893">
               <caret line="51" column="64" lean-forward="false" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
               <folding />
             </state>
@@ -65,7 +85,7 @@
       <file leaf-file-name="DeviceAttrMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="1957">
               <caret line="103" column="58" lean-forward="false" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
               <folding>
                 <marker date="1520871314405" expanded="true" signature="1094:1205" ph="select from t_device_attr" />
@@ -97,8 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceAttrTypeAddRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceAttrTypeDeleteRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceTypeListRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceTypeAddRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceTypeUpdateRequest.java" />
@@ -125,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/interceptor/CommonInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/ObjectDeleteRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/GroupController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/ObjectListRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/ObjectAddRequest.java" />
@@ -147,6 +164,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceAddRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceDeleteRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java" />
       </list>
     </option>
@@ -246,9 +266,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -415,7 +434,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,8 +448,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cn.zucc.debug.macore.model.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ZUCC_DEBUG\meian_water\ma-core\code\server\MaCore\src\main\resources" />
+      <recent name="E:\Debug\ma-core\code\server\MaCore\src\main\java\cn\zucc\debug\macore\client\old" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ZUCC_DEBUG\meian_water\ma-core\code\server\MaCore\src\main\java\cn\zucc\debug\macore\client\request" />
@@ -439,15 +460,14 @@
       <recent name="E:\java\JetBrains\workspace\MaCore\src\main\java\cn\zucc\debug\frame\helper\stringcast" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.zucc.debug.macore.client.controller" />
       <recent name="cn.zucc.debug.macore.client.request" />
+      <recent name="cn.zucc.debug.macore.client.controller" />
       <recent name="cn.zucc.debug.macore.client.interceptor" />
       <recent name="cn.zucc.debug.macore.console.util" />
       <recent name="cn.zucc.debug.macore.console.dbremote" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ZUCC_DEBUG\meian_water\ma-core\code\server\MaCore\src\main\resources" />
-      <recent name="E:\Debug\ma-core\code\server\MaCore\src\main\java\cn\zucc\debug\macore\client\old" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cn.zucc.debug.macore.model.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -665,11 +685,12 @@
       <workItem from="1520731983304" duration="18859000" />
       <workItem from="1520762976945" duration="3141000" />
       <workItem from="1520869645475" duration="1952000" />
+      <workItem from="1520956750293" duration="3000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80391000" />
+    <option name="totallyTimeSpent" value="83391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1380" height="744" extended-state="0" />
@@ -682,8 +703,8 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35947713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -696,7 +717,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36764705" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -735,22 +756,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/Page.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/pojo/WaterObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3705">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/StandardTableCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/frame/dbcreate/core/StandardDBCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -849,7 +854,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/interceptor/CommonInterceptor.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/ObjectDeleteRequest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/GroupController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/ObjectListRequest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/ObjectAddRequest.java" />
@@ -864,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,14 +914,6 @@
             <marker date="1520870863864" expanded="true" signature="4998:5164" ph="select from t_object_device" />
             <marker date="1520870863864" expanded="true" signature="5268:5476" ph="select from t_object_device" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/ObjectDeviceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="1957">
           <caret line="103" column="58" lean-forward="false" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
           <folding>
             <marker date="1520871314405" expanded="true" signature="1094:1205" ph="select from t_device_attr" />
@@ -971,7 +963,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/DeviceAttrMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="893">
           <caret line="51" column="64" lean-forward="false" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
           <folding />
         </state>
@@ -981,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,14 +980,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/ObjectDeviceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceAddRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="60" column="75" lean-forward="false" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state relative-caret-position="190">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="e#764#765#0" expanded="true" />
             <element signature="e#830#831#0" expanded="true" />
@@ -1004,10 +1035,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceDeleteRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/pojo/ObjectDevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="107" column="19" lean-forward="false" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+          <folding>
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2878#2879#0" expanded="true" />
+            <element signature="e#5161#5162#0" expanded="true" />
+            <element signature="e#5195#5196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="122" column="7" lean-forward="true" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
           <folding />
         </state>
       </provider>
