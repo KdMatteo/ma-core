@@ -65,4 +65,11 @@ public class MyError {
      */
     public static final String MESSAGE_DEVICE_ALREADY_EXIST = "this device already exist";
     public static final String MESSAGE_DEVICE_NOT_EXIST = "this device not exist";
+
+    /**
+     * terminal
+     */
+    public static final String MESSAGE_TERMINAL_ALREADY_EXIST = "this terminal already exist";
+    public static final String MESSAGE_TERMINAL_NOT_EXIST = "this terminal not exist";
+
 }

@@ -2,6 +2,9 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.Terminal;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface TerminalMapper extends BaseMapper<Terminal, Integer> {
     /**
@@ -51,4 +54,7 @@ public interface TerminalMapper extends BaseMapper<Terminal, Integer> {
      * @mbggenerated
      */
     int updateByPrimaryKey(Terminal record);
+
+    Terminal selectByObjectIdAndCode(@Param("objectId") Integer objectId, @Param("code") String code);
+    List<Terminal> selectByObjectId(@Param("objectId") Integer objectId);
 }

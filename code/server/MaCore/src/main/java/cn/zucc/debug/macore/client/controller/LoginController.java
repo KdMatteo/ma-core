@@ -17,7 +17,6 @@ public class LoginController extends CommonController {
     UserService userService;
 
     /**
-     * 登录 test url:http://localhost:8080/user/login?ip=localhost&port=3306&account=rot&password=12345
      * @return
      */
     @RequestMapping("")

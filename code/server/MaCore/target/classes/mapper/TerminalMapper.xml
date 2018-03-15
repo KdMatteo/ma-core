@@ -133,4 +133,19 @@
       c_port = #{port,jdbcType=INTEGER}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectByObjectIdAndCode" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_terminal
+    where c_object_id = #{objectId} and c_code = #{code}
+  </select>
+
+  <select id="selectByObjectId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_terminal
+    where c_object_id = #{objectId}
+  </select>
 </mapper>
