@@ -68,9 +68,9 @@ public class DeviceController extends CommonController {
     public String add(@RequestBody DeviceAddRequest request) {
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findById(request.getObjectId());
-        DeviceType deviceType = deviceTypeService.findById(request.getDeviceTypeId());
+        DeviceType deviceType = deviceTypeService.findById(request.getDevicetypeId());
         List<ObjectDevice> objectDeviceList = objectDeviceService.findByObjectIdAndGroupIdAndDevicetypeId(request.getObjectId(),
-                request.getGroupId(), request.getDeviceTypeId());
+                request.getGroupId(), request.getDevicetypeId());
         if (waterObject == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (deviceType == null) {
@@ -86,7 +86,7 @@ public class DeviceController extends CommonController {
             }
             if (host == null) {
                 return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_HOST_NOT_EXIST, jsonObject);
-            } else if (objectDeviceList == null || objectDeviceList.size() > 0){
+            } else if (objectDeviceList == null || objectDeviceList.size() <= 0){
                 if (deviceType.getMulti() == 1) {
                     index = 1;
                     tableName = tableName + "" + index;
@@ -102,9 +102,16 @@ public class DeviceController extends CommonController {
                 objectDevice.setCode(deviceType.getTableName());
                 objectDevice.setIndex(index);
                 objectDevice.setObjectId(request.getObjectId());
-                objectDevice.setDevicetypeId(request.getDeviceTypeId());
+                objectDevice.setDevicetypeId(request.getDevicetypeId());
                 objectDevice.setGroupId(request.getGroupId());
-                objectDeviceService.save(objectDevice);
+                int id = objectDeviceService.save(objectDevice);
+                for (Integer attrTypeId : request.getAttrs()) {
+                    DeviceAttr deviceAttr = new DeviceAttr();
+                    deviceAttr.setAttrtypeId(attrTypeId);
+
+                    deviceAttr.setDeviceId(objectDevice.getId());
+                    deviceAttrService.save(deviceAttr);
+                }
                 return success(jsonObject);
             } else {
                 return responseJSON(MyError.ERROR_CODE_REMOTE_WRONG, MyError.MESSAGE_REMOTE_WRONG, jsonObject);
@@ -131,7 +138,7 @@ public class DeviceController extends CommonController {
         } else {
             WaterObject waterObject = waterObjectService.findById(objectDevice.getObjectId());
             Host host = hostService.findById(waterObject.getHostId());
-            if (RemoteDataBaseManager.connectDataBase(host, waterObject.getDatabaseName()).deleteTable(objectDevice.getCode())) {
+            if (RemoteDataBaseManager.connectDataBase(host, waterObject.getDatabaseName()).deleteTable(objectDevice.getCode() + objectDevice.getIndex())) {
                 objectDeviceService.deleteById(request.getId());
                 List<DeviceAttr> attrList = deviceAttrService.findByDeviceId(request.getId());
                 if (attrList != null && attrList.size() > 0) {

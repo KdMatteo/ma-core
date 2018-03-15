@@ -7,6 +7,8 @@ import cn.zucc.debug.macore.model.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
 
@@ -21,5 +23,10 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
     @Override
     public User findByAccount(String account) {
         return userMapper.selectByAccount(account);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userMapper.selectAll();
     }
 }

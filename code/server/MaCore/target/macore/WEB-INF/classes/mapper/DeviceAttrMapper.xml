@@ -100,4 +100,11 @@
       c_attrtype_id = #{attrtypeId,jdbcType=INTEGER}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByDeviceId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_device_attr
+    where c_device_id = #{deviceId}
+  </select>
 </mapper>

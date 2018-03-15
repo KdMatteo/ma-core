@@ -46,6 +46,9 @@
       c_account, c_password)
     values (#{id,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{port,jdbcType=INTEGER}, 
       #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+    <selectKey resultType="Integer" order="AFTER" keyProperty="id">
+      SELECT LAST_INSERT_ID() AS c_id
+    </selectKey>
   </insert>
   <insert id="insertSelective" parameterType="cn.zucc.debug.macore.model.pojo.Host">
     <!--
@@ -128,5 +131,11 @@
     <include refid="Base_Column_List" />
     from t_host
     where c_ip = #{ip} AND c_port = #{port} AND c_account=#{account}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_host
   </select>
 </mapper>

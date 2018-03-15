@@ -2,6 +2,10 @@ package cn.zucc.debug.macore.model.mapper;
 
 import cn.zucc.debug.frame.ssm.BaseMapper;
 import cn.zucc.debug.macore.model.pojo.DBSql;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+import java.util.Map;
 
 public interface DBSqlMapper extends BaseMapper<DBSql, Integer> {
     /**
@@ -51,4 +55,8 @@ public interface DBSqlMapper extends BaseMapper<DBSql, Integer> {
      * @mbggenerated
      */
     int updateByPrimaryKeyWithBLOBs(DBSql record);
+
+    List<DBSql> selectLimit(@Param("limitFrom") Integer limitFrom, @Param("limitCount") Integer limitCount,
+                                    @Param("searchParams") Map<String, Object> searchParams);
+
 }

@@ -7,6 +7,8 @@ import cn.zucc.debug.macore.model.pojo.Host;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("hostService")
 public class HostServiceImpl extends BaseServiceImpl<Host, Integer> implements HostService{
 
@@ -18,8 +20,14 @@ public class HostServiceImpl extends BaseServiceImpl<Host, Integer> implements H
         return hostMapper;
     }
 
+
     @Override
     public Host findByIpAndPortAndAccount(String ip, int port, String account) {
         return hostMapper.selectByIpAndAccountAndPassword(ip, port, account);
+    }
+
+    @Override
+    public List<Host> findAll() {
+        return hostMapper.selectAll();
     }
 }

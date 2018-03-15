@@ -55,8 +55,8 @@ public interface ObjectDeviceMapper extends BaseMapper<ObjectDevice, Integer> {
      */
     int updateByPrimaryKey(ObjectDevice record);
 
-    List<ObjectDevice> selectByObjectIdAndGroupId(@Param("objectId") Integer objectId, @Param("objectId") Integer groupId);
+    List<ObjectDevice> selectByObjectIdAndGroupId(@Param("objectId") Integer objectId, @Param("groupId") Integer groupId);
 
-    List<ObjectDevice> selectByObjectIdAndGroupIdAndDevicetypeId(@Param("objectId") Integer objectId, @Param("objectId") Integer groupId,
+    List<ObjectDevice> selectByObjectIdAndGroupIdAndDevicetypeId(@Param("objectId") Integer objectId, @Param("groupId") Integer groupId,
                                                          @Param("devicetypeId") Integer devicetypeId);
 }

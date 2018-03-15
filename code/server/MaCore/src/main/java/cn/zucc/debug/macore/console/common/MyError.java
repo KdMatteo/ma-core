@@ -23,6 +23,12 @@ public class MyError {
     public static final int ERROR_CODE_REMOTE_WRONG = 3;
 
     /**
+     * account
+     */
+    public static final String MESSAGE_ACCOUNT_NOT_EXIST = "account not exist";
+    public static final String MESSAGE_ACCOUNT_ALREADY_EXIST = "account already exist";
+
+    /**
      * all
      */
     public static final String MESSAGE_REMOTE_WRONG = "remote db wrong";
@@ -37,7 +43,6 @@ public class MyError {
      * object
      */
     public static final String MESSAGE_OBJECT_ALREADY_EXIST = "this object is already exist";
-    public static final String MESSAGE_ACCOUNT_NOT_EXIST = "account not exist";
     public static final String MESSAGE_OBJECT_NOT_EXIST = "this object is not exist";
     /**
      * group

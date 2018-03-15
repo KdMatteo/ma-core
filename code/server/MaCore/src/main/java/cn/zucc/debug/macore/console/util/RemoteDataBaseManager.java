@@ -102,7 +102,7 @@ public class RemoteDataBaseManager {
      * @param deviceAttrTypeList 表字段
      */
     public static boolean createTable(TableCreator tableCreator, String tableName, List<DeviceAttrType> deviceAttrTypeList) {
-        return tableCreator.addTableFields(tableName, getFieldsByAttrTypeList(deviceAttrTypeList));
+        return tableCreator.createTable(tableName, getFieldsByAttrTypeList(deviceAttrTypeList));
     }
 
     /**

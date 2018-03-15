@@ -6,14 +6,14 @@ public class DeviceAddRequest {
 
     private Integer objectId;
     private Integer groupId;
-    private Integer deviceTypeId;
+    private Integer devicetypeId;
     private List<Integer> attrs;
 
     public Integer getObjectId() {
         return objectId;
     }
 
-    public void setObjectId(Integer objectId) {
+    public void setObject_id(Integer objectId) {
         this.objectId = objectId;
     }
 
@@ -21,16 +21,16 @@ public class DeviceAddRequest {
         return groupId;
     }
 
-    public void setGroupId(Integer groupId) {
+    public void setGroup_id(Integer groupId) {
         this.groupId = groupId;
     }
 
-    public Integer getDeviceTypeId() {
-        return deviceTypeId;
+    public Integer getDevicetypeId() {
+        return devicetypeId;
     }
 
-    public void setDeviceTypeId(Integer deviceTypeId) {
-        this.deviceTypeId = deviceTypeId;
+    public void setDevicetype_id(Integer devicetypeId) {
+        this.devicetypeId = devicetypeId;
     }
 
     public List<Integer> getAttrs() {
