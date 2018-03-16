@@ -111,4 +111,12 @@
       c_plc_address = #{plcAddress,jdbcType=VARCHAR}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByTerminalId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+
+    select
+    <include refid="Base_Column_List" />
+    from t_terminal_attr
+    where c_terminal_id = #{terminalId,jdbcType=INTEGER}
+  </select>
 </mapper>

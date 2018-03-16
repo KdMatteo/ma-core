@@ -107,6 +107,7 @@
     select
     <include refid="Base_Column_List" />
     from t_dbsql
+    where 1=1
     <if test="searchParams != null">
       <foreach collection="searchParams.keys" index="index" item="key">
         <if test="searchParams[key]!=null and searchParams[key]!=''">

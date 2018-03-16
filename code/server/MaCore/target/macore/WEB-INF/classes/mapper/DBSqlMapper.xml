@@ -102,4 +102,19 @@
     set c_sql_string = #{sqlString,jdbcType=LONGVARCHAR}
     where c_id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectLimit" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_dbsql
+    where 1=1
+    <if test="searchParams != null">
+      <foreach collection="searchParams.keys" index="index" item="key">
+        <if test="searchParams[key]!=null and searchParams[key]!=''">
+          and c_${key} = #{searchParams[${key}]}
+        </if>
+      </foreach>
+    </if>
+    LIMIT #{limitFrom}, #{limitCount}
+  </select>
 </mapper>

@@ -93,7 +93,7 @@ public class TerminalController extends CommonController {
     private void saveAttrs(JSONArray attrs, Terminal terminal) {
         for (Object attrInfo : attrs) {
             TerminalAttr terminalAttr = new TerminalAttr();
-            terminalAttr.setDeviceattrId((Integer) ((JSONObject)attrInfo).get("deviceattrId"));
+            terminalAttr.setDeviceattrId((Integer) ((JSONObject)attrInfo).get("deviceattr_id"));
             terminalAttr.setPlcAddress((String) ((JSONObject)attrInfo).get("plc_address"));
             terminalAttr.setTerminalId(terminal.getId());
             terminalAttrService.save(terminalAttr);
