@@ -1,6 +1,6 @@
-# vue-maCore
+# maCore
 
-> A Vue.js project
+> A web project
 
 ## Build Setup
 
