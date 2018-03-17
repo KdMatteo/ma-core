@@ -108,7 +108,6 @@ public class DeviceController extends CommonController {
                 for (Object attr : request.getAttrs()) {
                     DeviceAttr deviceAttr = new DeviceAttr();
                     deviceAttr.setAttrtypeId((Integer) ((JSONObject)attr).get("attrtype_id"));
-
                     deviceAttr.setDeviceId(objectDevice.getId());
                     deviceAttrService.save(deviceAttr);
                 }
@@ -154,11 +153,11 @@ public class DeviceController extends CommonController {
                     for (Object attr : request.getAttrs()) {
                         DeviceAttr deviceAttr = new DeviceAttr();
                         deviceAttr.setAttrtypeId((Integer) ((JSONObject)attr).get("attrtype_id"));
-
+                        System.out.println();
                         deviceAttr.setDeviceId(objectDevice.getId());
                         deviceAttrService.save(deviceAttr);
-                        return success(jsonObject);
                     }
+                    return success(jsonObject);
                 }
             }
             return responseJSON(MyError.ERROR_CODE_REMOTE_WRONG, MyError.MESSAGE_REMOTE_WRONG, jsonObject);

@@ -29,36 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TerminalController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/TerminalController.java">
+      <file leaf-file-name="DeviceController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="86" column="48" lean-forward="false" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-mybatis.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-              <folding>
-                <element signature="e#1349#1360#0" expanded="true" />
-                <element signature="e#1399#1407#0" expanded="true" />
-                <element signature="e#1451#1464#0" expanded="true" />
-                <element signature="e#1508#1521#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="100">
+              <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -74,6 +49,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>GROUP</find>
+      <find>group by</find>
+    </findStrings>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -85,7 +66,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DeviceAttrServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/DeviceDeleteRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ObjectDeviceMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/ObjectDeviceMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/UserService.java" />
@@ -130,9 +110,10 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceTypeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DBSqlController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/DBSqlMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/TerminalController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ObjectDeviceMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java" />
       </list>
     </option>
   </component>
@@ -179,7 +160,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-140" />
     <option name="y" value="19" />
     <option name="width" value="1364" />
@@ -241,6 +222,77 @@
             <path>
               <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
               <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="macore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="macore" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="macore" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MaCore" type="b2602c69:ProjectViewProjectNode" />
@@ -505,15 +557,15 @@
       <workItem from="1521128073744" duration="4565000" />
       <workItem from="1521170693550" duration="1103000" />
       <workItem from="1521172000019" duration="81000" />
-      <workItem from="1521250841164" duration="12138000" />
+      <workItem from="1521250841164" duration="13400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107408000" />
+    <option name="totallyTimeSpent" value="108670000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38172922" sideWeight="0.50303954" order="7" side_tool="true" content_ui="tabs" />
@@ -536,19 +588,19 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45751634" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6535948" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2526475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2526475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24836601" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,27 +620,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/WaterObjectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="25" column="109" lean-forward="true" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/DBSqlService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/request/GroupListRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -632,43 +663,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/TerminalAttrService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/TerminalAttrServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TerminalAttrMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="102" column="70" lean-forward="true" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/model/service/TerminalService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/console/common/MyError.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GroupMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-627">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ObjectDeviceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="51" column="3" lean-forward="false" selection-start-line="51" selection-start-column="3" selection-end-line="53" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TerminalMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -847,80 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1521092252609" expanded="true" signature="1094:1205" ph="select from t_device_attr" />
-            <marker date="1521092252609" expanded="true" signature="1421:1486" ph="delete from " />
-            <marker date="1521092252609" expanded="true" signature="1715:1887" ph="insert into t_device_attr... " />
-            <marker date="1521092252609" expanded="true" signature="2979:3264" ph="update t_dev... " />
-            <marker date="1521092252609" expanded="true" signature="3505:3670" ph="update t_dev... " />
-            <marker date="1521092252609" expanded="true" signature="3747:3853" ph="select from t_device_attr" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrTypeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <marker date="1520672701227" expanded="true" signature="1350:1466" ph="select from t_device_attr_type" />
-            <marker date="1520672701227" expanded="true" signature="1682:1752" ph="delete from " />
-            <marker date="1520672701227" expanded="true" signature="1985:2295" ph="insert into t_device_attr_type... " />
-            <marker date="1520672701227" expanded="true" signature="3841:4414" ph="update t_dev... " />
-            <marker date="1520672701227" expanded="true" signature="4659:4969" ph="update t_dev... " />
-            <marker date="1520672701227" expanded="true" signature="5050:5169" ph="select from t_device_attr_type" />
-            <marker date="1520672701227" expanded="true" signature="5262:5413" ph="select from t_device_attr_type" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DBSqlController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DBSqlMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <marker date="1521259476800" expanded="true" signature="1498:1650" ph="select , fro... " />
-            <marker date="1521259476800" expanded="true" signature="1866:1925" ph="delete from " />
-            <marker date="1521259476800" expanded="true" signature="2149:2260" ph="insert into t_dbsql... " />
-            <marker date="1521259476800" expanded="true" signature="3183:3364" ph="update t_dbs... " />
-            <marker date="1521259476800" expanded="true" signature="3609:3720" ph="update t_dbs... " />
-            <marker date="1521259476800" expanded="true" signature="3797:4182" ph="select from t_dbsql" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceTypeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1520669861662" expanded="true" signature="1154:1265" ph="select from t_device_type" />
-            <marker date="1520669861662" expanded="true" signature="1481:1546" ph="delete from " />
-            <marker date="1520669861662" expanded="true" signature="1775:1972" ph="insert into t_device_type... " />
-            <marker date="1520669861662" expanded="true" signature="3183:3541" ph="update t_dev... " />
-            <marker date="1520669861662" expanded="true" signature="3782:3979" ph="update t_dev... " />
-            <marker date="1520669861662" expanded="true" signature="4049:4119" ph="select from t_device_type" />
-            <marker date="1520669861662" expanded="true" signature="4197:4305" ph="select from t_device_type" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -933,18 +862,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/TerminalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="86" column="48" lean-forward="false" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -962,10 +891,195 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/TerminalController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="213">
+          <caret line="86" column="48" lean-forward="false" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WaterObjectMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520758575439" expanded="true" signature="1504:1610" ph="select from t_object" />
+            <marker date="1520758575439" expanded="true" signature="1827:1887" ph="delete from " />
+            <marker date="1520758575439" expanded="true" signature="2118:2490" ph="insert into t_object... " />
+            <marker date="1520758575439" expanded="true" signature="4320:5069" ph="update t_obj... " />
+            <marker date="1520758575439" expanded="true" signature="5312:5698" ph="update t_obj... " />
+            <marker date="1520758575439" expanded="true" signature="5778:6182" ph="select from t_object" />
+            <marker date="1520758575439" expanded="true" signature="6692:6827" ph="select from t_object" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1521101999628" expanded="true" signature="1069:1173" ph="select from t_user" />
+            <marker date="1521101999628" expanded="true" signature="1389:1447" ph="delete from " />
+            <marker date="1521101999628" expanded="true" signature="1670:1827" ph="insert into t_user... " />
+            <marker date="1521101999628" expanded="true" signature="1902:1933" ph="SELECT LAST_... " />
+            <marker date="1521101999628" expanded="true" signature="3009:3276" ph="update t_use... " />
+            <marker date="1521101999628" expanded="true" signature="3511:3661" ph="update t_use... " />
+            <marker date="1521101999628" expanded="true" signature="3737:3833" ph="select from t_user" />
+            <marker date="1521101999628" expanded="true" signature="3903:3966" ph="select from t_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TerminalMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+          <folding>
+            <marker date="1521168145750" expanded="true" signature="1286:1394" ph="select from t_terminal" />
+            <marker date="1521168145750" expanded="true" signature="1610:1672" ph="delete from " />
+            <marker date="1521168145750" expanded="true" signature="1899:2153" ph="insert into t_terminal... " />
+            <marker date="1521168145750" expanded="true" signature="2228:2259" ph="SELECT LAST_... " />
+            <marker date="1521168145750" expanded="true" signature="3736:4251" ph="update t_ter... " />
+            <marker date="1521168145750" expanded="true" signature="4490:4758" ph="update t_ter... " />
+            <marker date="1521168145750" expanded="true" signature="4843:4967" ph="select from t_terminal" />
+            <marker date="1521168145750" expanded="true" signature="5044:5147" ph="select from t_terminal" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TerminalAttrMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="102" column="70" lean-forward="true" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
+          <folding>
+            <marker date="1521168145720" expanded="true" signature="1210:1323" ph="select from t_terminal_attr" />
+            <marker date="1521168145720" expanded="true" signature="1540:1607" ph="delete from " />
+            <marker date="1521168145720" expanded="true" signature="1839:2068" ph="insert into t_terminal_attr... " />
+            <marker date="1521168145720" expanded="true" signature="3355:3763" ph="update t_ter... " />
+            <marker date="1521168145720" expanded="true" signature="4007:4236" ph="update t_ter... " />
+            <marker date="1521168145720" expanded="true" signature="4351:4480" ph="select from t_terminal_attr" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ObjectDeviceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="146" column="15" lean-forward="false" selection-start-line="146" selection-start-column="15" selection-end-line="146" selection-end-column="15" />
+          <folding>
+            <marker date="1521270616944" expanded="true" signature="1340:1453" ph="select from t_object_device" />
+            <marker date="1521270616944" expanded="true" signature="1669:1736" ph="delete from " />
+            <marker date="1521270616944" expanded="true" signature="1967:2270" ph="insert into t_object_device... " />
+            <marker date="1521270616944" expanded="true" signature="2345:2376" ph="SELECT LAST_... " />
+            <marker date="1521270616944" expanded="true" signature="3924:4488" ph="update t_obj... " />
+            <marker date="1521270616944" expanded="true" signature="4731:5034" ph="update t_obj... " />
+            <marker date="1521270616944" expanded="true" signature="5121:5287" ph="select from t_object_device" />
+            <marker date="1521270616944" expanded="true" signature="5389:5597" ph="select from t_object_device" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/HostMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1521102440259" expanded="true" signature="1211:1315" ph="select from t_host" />
+            <marker date="1521102440259" expanded="true" signature="1531:1589" ph="delete from " />
+            <marker date="1521102440259" expanded="true" signature="1812:2033" ph="insert into t_host... " />
+            <marker date="1521102440259" expanded="true" signature="2108:2139" ph="SELECT LAST_... " />
+            <marker date="1521102440259" expanded="true" signature="3479:3912" ph="update t_hos... " />
+            <marker date="1521102440259" expanded="true" signature="4147:4375" ph="update t_hos... " />
+            <marker date="1521102440259" expanded="true" signature="4467:4599" ph="select from t_host" />
+            <marker date="1521102440259" expanded="true" signature="4669:4732" ph="select from t_host" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520757186194" expanded="true" signature="1064:1169" ph="select from t_group" />
+            <marker date="1520757186194" expanded="true" signature="1385:1444" ph="delete from " />
+            <marker date="1520757186194" expanded="true" signature="1668:1821" ph="insert into t_group... " />
+            <marker date="1520757186194" expanded="true" signature="2872:3132" ph="update t_gro... " />
+            <marker date="1520757186194" expanded="true" signature="3368:3514" ph="update t_gro... " />
+            <marker date="1520757186194" expanded="true" signature="3596:3696" ph="select from t_group" />
+            <marker date="1520757186194" expanded="true" signature="3781:3902" ph="select from t_group" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceTypeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520669861662" expanded="true" signature="1154:1265" ph="select from t_device_type" />
+            <marker date="1520669861662" expanded="true" signature="1481:1546" ph="delete from " />
+            <marker date="1520669861662" expanded="true" signature="1775:1972" ph="insert into t_device_type... " />
+            <marker date="1520669861662" expanded="true" signature="3183:3541" ph="update t_dev... " />
+            <marker date="1520669861662" expanded="true" signature="3782:3979" ph="update t_dev... " />
+            <marker date="1520669861662" expanded="true" signature="4049:4119" ph="select from t_device_type" />
+            <marker date="1520669861662" expanded="true" signature="4197:4305" ph="select from t_device_type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrTypeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1520672701227" expanded="true" signature="1350:1466" ph="select from t_device_attr_type" />
+            <marker date="1520672701227" expanded="true" signature="1682:1752" ph="delete from " />
+            <marker date="1520672701227" expanded="true" signature="1985:2295" ph="insert into t_device_attr_type... " />
+            <marker date="1520672701227" expanded="true" signature="3841:4414" ph="update t_dev... " />
+            <marker date="1520672701227" expanded="true" signature="4659:4969" ph="update t_dev... " />
+            <marker date="1520672701227" expanded="true" signature="5050:5169" ph="select from t_device_attr_type" />
+            <marker date="1520672701227" expanded="true" signature="5262:5413" ph="select from t_device_attr_type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeviceAttrMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1521092252609" expanded="true" signature="1094:1205" ph="select from t_device_attr" />
+            <marker date="1521092252609" expanded="true" signature="1421:1486" ph="delete from " />
+            <marker date="1521092252609" expanded="true" signature="1715:1887" ph="insert into t_device_attr... " />
+            <marker date="1521092252609" expanded="true" signature="2979:3264" ph="update t_dev... " />
+            <marker date="1521092252609" expanded="true" signature="3505:3670" ph="update t_dev... " />
+            <marker date="1521092252609" expanded="true" signature="3747:3853" ph="select from t_device_attr" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DBSqlMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="21" column="68" lean-forward="true" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+          <folding>
+            <marker date="1521259476800" expanded="true" signature="1498:1650" ph="select , fro... " />
+            <marker date="1521259476800" expanded="true" signature="1866:1925" ph="delete from " />
+            <marker date="1521259476800" expanded="true" signature="2149:2260" ph="insert into t_dbsql... " />
+            <marker date="1521259476800" expanded="true" signature="3183:3364" ph="update t_dbs... " />
+            <marker date="1521259476800" expanded="true" signature="3609:3720" ph="update t_dbs... " />
+            <marker date="1521259476800" expanded="true" signature="3797:4182" ph="select from t_dbsql" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zucc/debug/macore/client/controller/DeviceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
           <folding />
         </state>
       </provider>

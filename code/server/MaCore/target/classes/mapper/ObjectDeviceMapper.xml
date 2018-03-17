@@ -145,7 +145,7 @@
     from t_object_device
     where c_object_id = #{objectId}
     and c_group_id = #{groupId}
-    group by c_index desc
+    order by c_index desc
   </select>
 
   <select id="selectByObjectIdAndGroupIdAndDevicetypeId" resultMap="BaseResultMap">
@@ -155,6 +155,6 @@
     where c_object_id = #{objectId}
     and c_group_id = #{groupId}
     and c_devicetype_id = #{devicetypeId}
-    group by c_index desc
+    order by c_index desc
   </select>
 </mapper>
