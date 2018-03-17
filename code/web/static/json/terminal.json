@@ -1,0 +1,36 @@
+{
+    "errorCode": 0, 
+    "errorMessage": "",
+    
+    "data": [{
+        "id": 1,
+        "code": "001",
+        "name": "终端1",
+        "ip": "172.10.10.10",
+        "port": 8080,
+        "attrs": [{
+            "deviceattr_id": 33,
+            "plc_address": "111"
+        }]
+    }, {
+        "id": 2,
+        "code": "001001",
+        "name": "终端2",
+        "ip": "172.10.10.10",
+        "port": 8080,
+        "attrs": [{
+            "deviceattr_id": 2,
+            "plc_address": "222"
+        }]
+    }, {
+        "id": 3,
+        "code": "001001",
+        "name": "终端3",
+        "ip": "172.10.10.10",
+        "port": 8080,
+        "attrs": [{
+            "deviceattr_id": 3,
+            "plc_address": "333"
+        }]
+    }]
+}

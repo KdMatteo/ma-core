@@ -1,0 +1,42 @@
+{
+    "errorCode": 0, 
+    "errorMessage": "",
+
+    "data": [{
+        "id": 11,
+        "devicetype_id": 1,
+        "code": "pump",
+        "index": 1,
+        "attrs": [{
+            "id": 33,
+            "attrtype_id": 1
+        }]
+    }, {
+        "id": 22,
+        "devicetype_id": 1,
+        "code": "pump2",
+        "index": 2,
+        "attrs": [{
+            "id": 2,
+            "attrtype_id": 2
+        }]
+    }, {
+        "id": 33,
+        "devicetype_id": 2,
+        "code": "slot_pump",
+        "index": 1,
+        "attrs": [{
+            "id": 3,
+            "attrtype_id": 4
+        }]
+    }, {
+        "id": 44,
+        "devicetype_id": 3,
+        "code": "system",
+        "index": 1,
+        "attrs": [{
+            "id": 4,
+            "attrtype_id": 8
+        }]
+    }]
+}

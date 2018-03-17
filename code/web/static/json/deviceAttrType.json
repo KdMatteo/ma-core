@@ -1,0 +1,24 @@
+{
+    "errorCode": 0, 
+    "errorMessage": "",
+
+    "data": [{
+        "id": 1,
+        "name": "电流A",
+        "field_name": "CurrentA",
+        "label": "电流A",
+        "data_type": "int"
+    }, {
+        "id": 2,
+        "name": "电流B",
+        "field_name": "CurrentB",
+        "label": "电流B",
+        "data_type": "float"
+    }, {
+        "id": 3,
+        "name": "电流C",
+        "field_name": "CurrentC",
+        "label": "电流C",
+        "data_type": "float"
+    }]
+}

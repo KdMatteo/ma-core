@@ -1,0 +1,51 @@
+{
+    "errorCode": 0, 
+    "errorMessage": "",
+
+    "data": [{
+        "id": 1,
+        "name": "设备类型1",
+        "table_name": "pump",
+        "multi": 1,
+        "attrs": [{
+            "id": 1,
+            "label": "电流A"
+        }, {
+            "id": 2,
+            "label": "电流B"
+        }, {
+            "id": 3,
+            "label": "电流C"
+        }]
+    }, {
+        "id": 2,
+        "name": "设备类型2",
+        "table_name": "slot_pump",
+        "multi": 0,
+        "attrs": [{
+            "id": 4,
+            "label": "浊度"
+        }, {
+            "id": 5,
+            "label": "PH值"
+        }, {
+            "id": 6,
+            "label": "余氯值"
+        }]
+    }, {
+        "id": 3,
+        "name": "设备类型3",
+        "table_name": "system",
+        "multi": 0,
+        "attrs": [{
+            "id": 7,
+            "label": "水位"
+        }, {
+            "id": 8,
+            "label": "进水压"
+        }, {
+            "id": 9,
+            "label": "出水压"
+        }]
+    }]
+}
