@@ -54,4 +54,7 @@ public abstract class TableCreator {
      * @return
      */
     public abstract boolean deleteTableFields(String tableName, String[] fieldNames);
+
+
+    public abstract boolean executeSql(String sql);
 }

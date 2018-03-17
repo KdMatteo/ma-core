@@ -37,8 +37,9 @@ public class TerminalController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         for (Terminal terminal : terminalList) {
-            JSONObject object = JSONUtil.fromObject(terminal, "*");
-            object.put("attrs", terminalAttrService.findByTerminalId(terminal.getId()));
+            JSONObject object = JSONUtil.changeKey(JSONUtil.fromObject(terminal, "*"), JSONUtil.TYPE_UNDERLINE);
+            object.put("attrs", JSONUtil.fromList(terminalAttrService.findByTerminalId(terminal.getId()),
+                    "*", JSONUtil.TYPE_UNDERLINE));
             jsonArray.add(object);
         }
         jsonObject.put("data", jsonArray);
@@ -64,7 +65,7 @@ public class TerminalController extends CommonController {
             terminal.setPort(request.getPort());
             terminalService.save(terminal);
             saveAttrs(request.getAttrs(), terminal);
-            jsonObject.put("data", JSONUtil.fromObject(terminal, "*"));
+            jsonObject.put("data", JSONUtil.changeKey(JSONUtil.fromObject(terminal, "*"), JSONUtil.TYPE_UNDERLINE));
             return success(jsonObject);
         }
     }
@@ -85,6 +86,10 @@ public class TerminalController extends CommonController {
             terminal.setName(request.getName());
             terminal.setPort(request.getPort());
             terminalService.updateById(terminal);
+            List<TerminalAttr> terminalAttrList = terminalAttrService.findByTerminalId(request.getId());
+            for (TerminalAttr terminalAttr : terminalAttrList) {
+                terminalAttrService.deleteById(terminalAttr.getId());
+            }
             saveAttrs(request.getAttrs(), terminal);
             return success(jsonObject);
         }

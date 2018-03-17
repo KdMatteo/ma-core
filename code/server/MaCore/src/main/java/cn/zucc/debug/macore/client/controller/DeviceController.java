@@ -48,9 +48,9 @@ public class DeviceController extends CommonController {
         if (deviceList != null) {
             JSONArray deviceArray = new JSONArray();
             for (ObjectDevice device : deviceList) {
-                JSONObject item = JSONUtil.fromObject(device, "*");
+                JSONObject item = JSONUtil.changeKey(JSONUtil.fromObject(device, "*"), JSONUtil.TYPE_UNDERLINE);
                 List<DeviceAttr> deviceAttrList = deviceAttrService.findByDeviceId(device.getId());
-                item.put("attrs", JSONUtil.fromList(deviceAttrList, "id, attrTypeId", JSONUtil.TYPE_UNDERLINE));
+                item.put("attrs", JSONUtil.fromList(deviceAttrList, "id attrtypeId", JSONUtil.TYPE_UNDERLINE));
                 deviceArray.add(item);
             }
             jsonObject.put("data", deviceArray);
@@ -81,8 +81,8 @@ public class DeviceController extends CommonController {
             String tableName = deviceType.getTableName();
             List<DeviceAttrType> deviceAttrTypeList = new ArrayList<>();
             Integer index = null;
-            for (Integer attrTypeId : request.getAttrs()) {
-                deviceAttrTypeList.add(deviceAttrTypeService.findById(attrTypeId));
+            for (Object attr : request.getAttrs()) {
+                deviceAttrTypeList.add(deviceAttrTypeService.findById((Integer) ((JSONObject)attr).get("attrtype_id")));
             }
             if (host == null) {
                 return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_HOST_NOT_EXIST, jsonObject);
@@ -105,9 +105,9 @@ public class DeviceController extends CommonController {
                 objectDevice.setDevicetypeId(request.getDevicetypeId());
                 objectDevice.setGroupId(request.getGroupId());
                 int id = objectDeviceService.save(objectDevice);
-                for (Integer attrTypeId : request.getAttrs()) {
+                for (Object attr : request.getAttrs()) {
                     DeviceAttr deviceAttr = new DeviceAttr();
-                    deviceAttr.setAttrtypeId(attrTypeId);
+                    deviceAttr.setAttrtypeId((Integer) ((JSONObject)attr).get("attrtype_id"));
 
                     deviceAttr.setDeviceId(objectDevice.getId());
                     deviceAttrService.save(deviceAttr);
@@ -121,6 +121,49 @@ public class DeviceController extends CommonController {
     }
 
 
+
+    /**
+     * 修改
+     *
+     * @return
+     */
+    @RequestMapping("/update")
+    @ResponseBody
+    public String update(@RequestBody DeviceUpdateRequest request) {
+        JSONObject jsonObject = new JSONObject();
+        ObjectDevice objectDevice = objectDeviceService.findById(request.getId());
+        if (objectDevice == null) {
+            return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_NOT_EXIST, jsonObject);
+        } else {
+            WaterObject waterObject = waterObjectService.findById(objectDevice.getObjectId());
+            Host host = hostService.findById(waterObject.getHostId());
+            List<DeviceAttrType> deviceAttrTypeList = new ArrayList<>();
+            for (Object attr : request.getAttrs()) {
+                deviceAttrTypeList.add(deviceAttrTypeService.findById((Integer) ((JSONObject)attr).get("attrtype_id")));
+            }
+            TableCreator tableCreator = RemoteDataBaseManager.connectDataBase(host, waterObject.getDatabaseName());
+            String tableName = objectDevice.getCode() + objectDevice.getIndex();
+            if (RemoteDataBaseManager.deleteTable(tableCreator, tableName)) {
+                List<DeviceAttr> attrList = deviceAttrService.findByDeviceId(request.getId());
+                if (attrList != null && attrList.size() > 0) {
+                    for (DeviceAttr attr : attrList) {
+                        deviceAttrService.deleteById(attr.getId());
+                    }
+                }
+                if (RemoteDataBaseManager.createTable(tableCreator, tableName, deviceAttrTypeList)) {
+                    for (Object attr : request.getAttrs()) {
+                        DeviceAttr deviceAttr = new DeviceAttr();
+                        deviceAttr.setAttrtypeId((Integer) ((JSONObject)attr).get("attrtype_id"));
+
+                        deviceAttr.setDeviceId(objectDevice.getId());
+                        deviceAttrService.save(deviceAttr);
+                        return success(jsonObject);
+                    }
+                }
+            }
+            return responseJSON(MyError.ERROR_CODE_REMOTE_WRONG, MyError.MESSAGE_REMOTE_WRONG, jsonObject);
+        }
+    }
 
 
     /**

@@ -1,5 +1,7 @@
 package cn.zucc.debug.macore.client.request;
 
+import net.sf.json.JSONArray;
+
 import java.util.List;
 
 public class DeviceAddRequest {
@@ -7,7 +9,7 @@ public class DeviceAddRequest {
     private Integer objectId;
     private Integer groupId;
     private Integer devicetypeId;
-    private List<Integer> attrs;
+    private JSONArray attrs;
 
     public Integer getObjectId() {
         return objectId;
@@ -33,11 +35,11 @@ public class DeviceAddRequest {
         this.devicetypeId = devicetypeId;
     }
 
-    public List<Integer> getAttrs() {
+    public JSONArray getAttrs() {
         return attrs;
     }
 
-    public void setAttrs(List<Integer> attrs) {
+    public void setAttrs(JSONArray attrs) {
         this.attrs = attrs;
     }
 }

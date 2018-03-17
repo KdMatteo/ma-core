@@ -6,7 +6,9 @@ import cn.zucc.debug.macore.client.request.DeviceTypeDeleteRequest;
 import cn.zucc.debug.macore.client.request.DeviceTypeUpdateRequest;
 import cn.zucc.debug.macore.console.common.MyError;
 import cn.zucc.debug.macore.model.pojo.DeviceType;
+import cn.zucc.debug.macore.model.service.DeviceAttrTypeService;
 import cn.zucc.debug.macore.model.service.DeviceTypeService;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,8 @@ public class DeviceTypeController extends CommonController {
 
     @Autowired
     DeviceTypeService deviceTypeService;
+    @Autowired
+    DeviceAttrTypeService deviceAttrTypeService;
 
     /**
      * 获取列表
@@ -33,7 +37,13 @@ public class DeviceTypeController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         List<DeviceType> deviceTypeList = deviceTypeService.findAll();
         if (deviceTypeList != null) {
-            jsonObject.put("data", JSONUtil.fromList(deviceTypeList, "*", JSONUtil.TYPE_UNDERLINE));
+            JSONArray jsonArray = new JSONArray();
+            for (DeviceType deviceType : deviceTypeList) {
+                JSONObject jsonObject1 = JSONUtil.changeKey(JSONUtil.fromObject(deviceType, "*"), JSONUtil.TYPE_UNDERLINE);
+                jsonObject1.put("attrs", JSONUtil.fromList(deviceAttrTypeService.findByDevicetypeId(deviceType.getId()), "id label"));
+                jsonArray.add(jsonObject1);
+            }
+            jsonObject.put("data", jsonArray);
         }
         return success(jsonObject);
     }

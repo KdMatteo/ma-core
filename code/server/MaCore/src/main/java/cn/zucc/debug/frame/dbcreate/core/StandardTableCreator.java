@@ -6,6 +6,7 @@ import cn.zucc.debug.frame.dbcreate.jdbc.DbAction;
 import cn.zucc.debug.frame.dbcreate.model.Field;
 import cn.zucc.debug.frame.dbcreate.model.Table;
 
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -53,6 +54,17 @@ public class StandardTableCreator extends TableCreator{
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean executeSql(String sql) {
+        try {
+            statement.executeUpdate(sql);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

@@ -102,7 +102,15 @@ public class RemoteDataBaseManager {
      * @param deviceAttrTypeList 表字段
      */
     public static boolean createTable(TableCreator tableCreator, String tableName, List<DeviceAttrType> deviceAttrTypeList) {
-        return tableCreator.createTable(tableName, getFieldsByAttrTypeList(deviceAttrTypeList));
+        Field idField = new Field();
+        idField.setType("int");
+        idField.setName("c_id");
+        idField.setPk("true");
+        idField.setAuto("true");
+        Field createTimeField = new Field();
+        createTimeField.setName("c_create_time");
+        createTimeField.setType("datetime");
+        return tableCreator.createTable(tableName, getFieldsByAttrTypeList(deviceAttrTypeList, idField, createTimeField));
     }
 
     /**
@@ -110,15 +118,20 @@ public class RemoteDataBaseManager {
      * @param deviceAttrTypeList
      * @return
      */
-    private static Field[] getFieldsByAttrTypeList(List<DeviceAttrType> deviceAttrTypeList) {
-        Field[] fields = new Field[deviceAttrTypeList.size()];
+    private static Field[] getFieldsByAttrTypeList(List<DeviceAttrType> deviceAttrTypeList, Field... commonFields) {
+        int length = commonFields.length;
+        Field[] fields = new Field[deviceAttrTypeList.size() + length];
+        for (int i = 0; i < length; i++) {
+            Field field = new Field();
+            fields[i] = commonFields[i];
+        }
         for (int i = 0; i < deviceAttrTypeList.size(); i++) {
             Field field = new Field();
             DeviceAttrType attrType = deviceAttrTypeList.get(i);
             if (attrType != null) {
                 field.setName(attrType.getFieldName());
                 field.setType(attrType.getDataType());
-                fields[i] = field;
+                fields[i + length] = field;
             }
         }
         return fields;

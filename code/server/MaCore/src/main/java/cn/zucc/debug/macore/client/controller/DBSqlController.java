@@ -29,7 +29,7 @@ public class DBSqlController extends CommonController {
     public String list(@RequestBody DBSqlListRequest request) {
         List<DBSql> dbSqlList = dbSqlService.findBySearch(request.getPage().getSize(), request.getPage().getIndex(), request.getSearch());
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("data", JSONUtil.fromList(dbSqlList, "*"));
+        jsonObject.put("data", JSONUtil.fromList(dbSqlList, "*", JSONUtil.TYPE_UNDERLINE));
         return success(jsonObject);
     }
 
