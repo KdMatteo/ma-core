@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="MaCore:Web exploded">
-    <output-path>$PROJECT_DIR$/target/macore</output-path>
+    <output-path>$PROJECT_DIR$/target/maCore</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="MaCore/web/Web" />
       <element id="directory" name="WEB-INF">
