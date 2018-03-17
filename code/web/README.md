@@ -1,4 +1,4 @@
-# vue-demo-cnodejs
+# vue-maCore
 
 > A Vue.js project
 
