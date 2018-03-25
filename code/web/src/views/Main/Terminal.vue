@@ -6,7 +6,7 @@
             <el-breadcrumb-item :to="toObject"> 水厂</el-breadcrumb-item>
             <el-breadcrumb-item>终端管理</el-breadcrumb-item>
             </el-breadcrumb>
-            <el-button type="primary"icon="el-icon-plus" size="mini" @click="add()">新增</el-button>
+            <el-button type="primary" icon="el-icon-plus" size="mini" @click="add()">新增</el-button>
         </div>
         <el-table
             :data="tableData"
@@ -202,39 +202,52 @@ export default {
         },
         getGroupInfo(data) {
             let self = this
-            let treeData = [];
+            let treeData = []
+            //let retCnt = 0
+            let promises = []
+            let promise = null
 
-            for(let j = 0; j < data.length; j++) {
+            for (let j = 0; j < data.length; j++) {
                 let tmp = {}
                 tmp.id = data[j].id ? "group_" + data[j].id : 0
                 tmp.label = data[j].name ? data[j].name : ""
                 tmp.children = []
                 
-                if(tmp.id) {
-                    api.getDeviceList(this.formData.object_id, data[j].id)
-                        .then(ret => {
-                            if (0 === ret.errorCode) {
-                                let tmpDev = null
-                                
-                                ret.data.forEach((item, index) => {                                    
-                                    tmpDev = self.getDeviceInfo(item)
-                                    tmp.children.push(tmpDev)
-                               })
-                            }
-                        })
-                        .catch(error => {
+                if (tmp.id) {
+                    promises.push(
+                        new Promise((resolve, reject) => {
+                            api.getDeviceList(this.formData.object_id, data[j].id)
+                                .then(ret => {
+                                    if (0 === ret.errorCode) {
+                                        let tmpDev = null
+                                        
+                                       ret.data.forEach((item, index) => {                                    
+                                            tmpDev = self.getDeviceInfo(item)
+                                            tmp.children.push(tmpDev)
+                                       })
+                                    }
 
+                                    resolve({})
+                                })
+                                .catch(error => {
+                                    reject({})
+                                })
                         })
+                    )
                 }
                 
                 treeData.push(tmp)
             }
 
-            self.treeData = treeData
+            Promise.all(promises).then(rets => {
+                if ('update' === self.action) {
+                    self.$refs.tree.setCheckedKeys(self.checkKeys)
+                }
+            }).catch(error => {
+                //console.log(error);
+            });
 
-            setTimeout(() => {
-                this.$refs.tree.setCheckedKeys(self.checkKeys);
-            }, 50)
+            self.treeData = treeData
         },
         getDeviceInfo(data) {
             let tmp = {}
@@ -329,7 +342,7 @@ export default {
             });
         },
         exportCfg(row) {
-            
+            api.exportTerminal(row.id)
         },
         cancelDialog() {
             this.dialogVisible = false
@@ -347,7 +360,6 @@ export default {
 
             for (let i = 0; i < nodes.length; i++) {
                 node = nodes[i]
-                console.log(node);
                 if (typeof node.attrtype_id != "undefined") {
                     attrs.push({
                         deviceattr_id: node.rid,

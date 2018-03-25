@@ -6,7 +6,7 @@
             <el-breadcrumb-item :to="toObject"> 水厂</el-breadcrumb-item>
             <el-breadcrumb-item>运行单元</el-breadcrumb-item>
             </el-breadcrumb>
-            <el-button type="primary"icon="el-icon-plus" size="mini" @click="add()">新增</el-button>
+            <el-button type="primary" icon="el-icon-plus" size="mini" @click="add()">新增</el-button>
         </div>
         <el-table
             :data="tableData"

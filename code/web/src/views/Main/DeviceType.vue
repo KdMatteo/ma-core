@@ -4,7 +4,7 @@
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item><i class="el-icon-menu"></i> 设备类型</el-breadcrumb-item>
             </el-breadcrumb>
-            <el-button type="primary"icon="el-icon-plus" size="mini" @click="onClickAddDeviceType()">新增</el-button>
+            <el-button type="primary" icon="el-icon-plus" size="mini" @click="onClickAddDeviceType()">新增</el-button>
         </div>
         <el-table
             :data="tableData"

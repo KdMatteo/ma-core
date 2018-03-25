@@ -5,7 +5,7 @@
                 <el-breadcrumb-item :to="{name:'deviceType'}"><i class="el-icon-menu"></i> 设备类型</el-breadcrumb-item>
                 <el-breadcrumb-item>设备属性类型</el-breadcrumb-item>
             </el-breadcrumb>
-            <el-button type="primary"icon="el-icon-plus" size="mini" @click="onClickAddDeviceAttrType()">新增</el-button>
+            <el-button type="primary" icon="el-icon-plus" size="mini" @click="onClickAddDeviceAttrType()">新增</el-button>
         </div>
         <el-table
             :data="tableData"

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // api 路径
-const HOST = 'http://192.168.1.170:8080/maCore'
+const HOST = 'http://120.78.74.186/maCore'
 
 function fetch(url, data, method = 'post') {
     return new Promise((resolve, reject) => {
@@ -312,4 +312,8 @@ export default {
 			id: id
 		})
 	},
+	// 导出终端（文件）
+	exportTerminal(id) {
+		window.open(HOST + "/terminal/export?id=" + id)
+	}
 }
