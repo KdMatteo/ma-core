@@ -159,5 +159,8 @@ export default {
 .main-wrap .el-select {
     display: block;
 }
+.main-wrap .el-dialog__body {
+    padding: 20px;
+}
 
 </style>
