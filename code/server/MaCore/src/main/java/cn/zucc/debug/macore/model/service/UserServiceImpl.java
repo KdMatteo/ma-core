@@ -6,10 +6,12 @@ import cn.zucc.debug.macore.model.mapper.UserMapper;
 import cn.zucc.debug.macore.model.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service("userService")
+@Transactional
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
 
     @Autowired
