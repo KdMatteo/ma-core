@@ -105,6 +105,8 @@ create table t_terminal
    c_name               varchar(24),
    c_ip                 varchar(24),
    c_port               int,
+   c_version            varchar(24),
+   c_last_time          datetime,
    primary key (c_id)
 );
 

@@ -56,5 +56,6 @@ public interface TerminalMapper extends BaseMapper<Terminal, Integer> {
     int updateByPrimaryKey(Terminal record);
 
     Terminal selectByObjectIdAndCode(@Param("objectId") Integer objectId, @Param("code") String code);
+
     List<Terminal> selectByObjectId(@Param("objectId") Integer objectId);
 }

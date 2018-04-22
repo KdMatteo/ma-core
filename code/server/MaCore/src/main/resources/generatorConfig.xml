@@ -91,11 +91,11 @@
             <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;User,Integer&gt;" />-->
             <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
         <!--</table>-->
-        <!--<table tableName="t_terminal" domainObjectName="Terminal" enableCountByExample="false" enableUpdateByExample="false"-->
-               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Terminal,Integer&gt;" />-->
-            <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
-        <!--</table>-->
+        <table tableName="t_terminal" domainObjectName="Terminal" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Terminal,Integer&gt;" />
+            <columnRenamingRule searchString="^c" replaceString=""/>
+        </table>
         <!--<table tableName="t_terminal_attr" domainObjectName="TerminalAttr" enableCountByExample="false" enableUpdateByExample="false"-->
                <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
             <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;TerminalAttr,Integer&gt;" />-->
