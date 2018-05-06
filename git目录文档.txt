@@ -1,0 +1,16 @@
+git 远程仓库 https://github.com/ZUCC-DEBUG/ma-core
+
+操作：
+
+1.将远程仓库导入本地.git clone https://github.com/ZUCC-DEBUG/ma-core
+
+2.更新本地：git pull origin master
+
+3.提交本地：
+git add xxx（xxx为需要修改的文件、文件夹）
+git commit -m "yyy"(yyy为标记文字)
+git push //会提示并输入github账号密码
+
+4.冲突，提供两行代码参考：git fetch --all
+			  git reset --hard
+			其他更详细的自行查找学习
