@@ -19,4 +19,7 @@ public interface WaterObjectService extends BaseService<WaterObject, Integer> {
     WaterObject findByHostIdAndDatabaseName(Integer hostId, String databaseName);
 
     Integer countByHostIdAndSearch(Integer hostId, Map<String, Object>searchParams);
+
+    List<WaterObject> findByHostId(Integer hostId) ;
+
 }

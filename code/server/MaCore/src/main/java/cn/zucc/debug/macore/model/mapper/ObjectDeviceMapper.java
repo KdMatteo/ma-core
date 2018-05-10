@@ -57,6 +57,5 @@ public interface ObjectDeviceMapper extends BaseMapper<ObjectDevice, Integer> {
 
     List<ObjectDevice> selectByObjectIdAndGroupId(@Param("objectId") Integer objectId, @Param("groupId") Integer groupId);
 
-    List<ObjectDevice> selectByObjectIdAndGroupIdAndDevicetypeId(@Param("objectId") Integer objectId, @Param("groupId") Integer groupId,
-                                                         @Param("devicetypeId") Integer devicetypeId);
+    List<ObjectDevice> selectByObjectIdAndDevicetypeId(@Param("objectId") Integer objectId, @Param("devicetypeId") Integer devicetypeId);
 }

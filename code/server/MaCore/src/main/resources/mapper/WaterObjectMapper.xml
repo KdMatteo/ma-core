@@ -194,4 +194,12 @@
     from t_object
     where c_host_id = #{hostId} AND c_database_name = #{databaseName}
   </select>
+
+
+  <select id="selectByHostId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_object
+    where c_host_id = #{hostId}
+  </select>
 </mapper>

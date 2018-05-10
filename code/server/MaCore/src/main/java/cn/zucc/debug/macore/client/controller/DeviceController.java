@@ -69,8 +69,7 @@ public class DeviceController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findById(request.getObjectId());
         DeviceType deviceType = deviceTypeService.findById(request.getDevicetypeId());
-        List<ObjectDevice> objectDeviceList = objectDeviceService.findByObjectIdAndGroupIdAndDevicetypeId(request.getObjectId(),
-                request.getGroupId(), request.getDevicetypeId());
+        List<ObjectDevice> objectDeviceList = objectDeviceService.findByObjectIdAndDevicetypeId(request.getObjectId(), request.getDevicetypeId());
         if (waterObject == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (deviceType == null) {

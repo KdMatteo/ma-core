@@ -35,4 +35,9 @@ public class WaterObjectServiceImpl extends BaseServiceImpl<WaterObject, Integer
     public Integer countByHostIdAndSearch(Integer hostId, Map<String, Object> searchParams) {
         return waterObjectMapper.countByHostId(hostId, searchParams);
     }
+
+    @Override
+    public List<WaterObject> findByHostId(Integer hostId) {
+        return waterObjectMapper.selectByHostId(hostId);
+    }
 }

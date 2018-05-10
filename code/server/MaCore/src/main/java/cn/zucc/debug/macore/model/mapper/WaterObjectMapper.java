@@ -62,4 +62,6 @@ public interface WaterObjectMapper extends BaseMapper<WaterObject, Integer> {
     Integer countByHostId(@Param("hostId") Integer hostId, @Param("searchParams") Map<String, Object>searchParams);
 
     WaterObject selectByHostIdAndDatabaseName(@Param("hostId") Integer hostId, @Param("databaseName") String databaseName);
+
+    List<WaterObject> selectByHostId(@Param("hostId") Integer hostId);
 }

@@ -26,7 +26,7 @@ public class ObjectDeviceServiceImpl extends BaseServiceImpl<ObjectDevice, Integ
     }
 
     @Override
-    public List<ObjectDevice> findByObjectIdAndGroupIdAndDevicetypeId(Integer objectId, Integer groupId, Integer devicetypeId) {
-        return objectDeviceMapper.selectByObjectIdAndGroupIdAndDevicetypeId(objectId, groupId, devicetypeId);
+    public List<ObjectDevice> findByObjectIdAndDevicetypeId(Integer objectId, Integer devicetypeId) {
+        return objectDeviceMapper.selectByObjectIdAndDevicetypeId(objectId, devicetypeId);
     }
 }

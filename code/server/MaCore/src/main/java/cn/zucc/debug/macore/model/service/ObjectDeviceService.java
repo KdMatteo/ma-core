@@ -17,6 +17,6 @@ public interface ObjectDeviceService extends BaseService<ObjectDevice, Integer>{
 
     List<ObjectDevice> findByObjectIdAndGroupId(Integer objectId, Integer groupId);
 
-    List<ObjectDevice> findByObjectIdAndGroupIdAndDevicetypeId(Integer objectId, Integer groupId, Integer devicetypeId);
+    List<ObjectDevice> findByObjectIdAndDevicetypeId(Integer objectId, Integer devicetypeId);
 
 }

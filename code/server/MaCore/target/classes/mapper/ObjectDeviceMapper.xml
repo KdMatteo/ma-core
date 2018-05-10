@@ -148,12 +148,11 @@
     order by c_index desc
   </select>
 
-  <select id="selectByObjectIdAndGroupIdAndDevicetypeId" resultMap="BaseResultMap">
+  <select id="selectByObjectIdAndDevicetypeId" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from t_object_device
     where c_object_id = #{objectId}
-    and c_group_id = #{groupId}
     and c_devicetype_id = #{devicetypeId}
     order by c_index desc
   </select>
