@@ -351,6 +351,11 @@ export default {
         },
         add() {
             this.dialogVisible = true
+
+            this.$nextTick(() => {
+                this.formData.id = 0
+                this.$refs.formData.resetFields()
+            })
         },
         update(row) {
             let self = this
@@ -411,8 +416,7 @@ export default {
         },
         closeDialog(type) {
             if (0 === type) {// 终端信息
-                this.formData.id = 0
-                this.$refs.formData.resetFields() 
+                // do nothing
             } else {// 终端关联属性
                 this.checkValues = []
             }       
