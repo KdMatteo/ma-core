@@ -132,7 +132,8 @@ export default {
                 name: '',
                 code: '',
                 ip: '',
-                port: 8080
+                port: 8080,
+                attrs: null
             },
             treeData: [],
             rulesData: {
@@ -362,6 +363,7 @@ export default {
                 this.formData.code = row.code
                 this.formData.ip = row.ip
                 this.formData.port = row.port
+                this.formData.attrs = row.attrs
             })
         },
         del(row) {
@@ -424,9 +426,9 @@ export default {
                         self.cancelDialog(0)
 
                         if (self.formData.id > 0) {
-                            self.updateData(self.formData, attrs)
+                            self.updateData(self.formData, self.formData.attrs)
                         } else {
-                            self.addData(self.formData, attrs)
+                            self.addData(self.formData, [])
                         }
                     } else {
                         console.log('error submit!!')
@@ -447,6 +449,8 @@ export default {
                         });
                     }
                 }
+
+                self.cancelDialog(1);
 
                 self.updateData(self.formData, attrs)
             }
