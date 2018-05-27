@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +31,9 @@ public class TerminalController extends CommonController {
     @Autowired
     TerminalAttrService terminalAttrService;
     @Autowired
-    ObjectDeviceService objectDeviceService;
+    TerminalIpService terminalIpService;
+    @Autowired
+    DeviceService deviceService;
     @Autowired
     DeviceAttrService deviceAttrService;
     @Autowired
@@ -49,6 +50,9 @@ public class TerminalController extends CommonController {
         JSONArray jsonArray = new JSONArray();
         for (Terminal terminal : terminalList) {
             JSONObject object = JSONUtil.changeKey(JSONUtil.fromObject(terminal, "*"), JSONUtil.TYPE_UNDERLINE);
+            TerminalIp terminalIp = terminalIpService.findById(terminal.getId());
+            object.put("ip", terminalIp.getIp());
+            object.put("port", terminalIp.getPort());
             object.put("attrs", JSONUtil.fromList(terminalAttrService.findByTerminalId(terminal.getId()),
                     "*", JSONUtil.TYPE_UNDERLINE));
             jsonArray.add(object);
@@ -69,11 +73,11 @@ public class TerminalController extends CommonController {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_TERMINAL_ALREADY_EXIST, jsonObject);
         } else {
             terminal = new Terminal();
+            terminal.setTerminalIpId(request.getTerminalIpId());
             terminal.setCode(request.getCode());
-            terminal.setIp(request.getIp());
             terminal.setName(request.getName());
             terminal.setObjectId(request.getObjectId());
-            terminal.setPort(request.getPort());
+            //terminal.setTerminalIpId(request.getTerminalIpId());
             terminalService.save(terminal);
             saveAttrs(request.getAttrs(), terminal);
             jsonObject.put("data", JSONUtil.changeKey(JSONUtil.fromObject(terminal, "*"), JSONUtil.TYPE_UNDERLINE));
@@ -93,9 +97,9 @@ public class TerminalController extends CommonController {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_TERMINAL_NOT_EXIST, jsonObject);
         } else {
             terminal.setCode(request.getCode());
-            terminal.setIp(request.getIp());
             terminal.setName(request.getName());
-            terminal.setPort(request.getPort());
+            //terminal.setTerminalIpId(request.getTerminalIpId());
+            terminal.setTerminalIpId(request.getTerminalIpId());
             terminalService.updateById(terminal);
             List<TerminalAttr> terminalAttrList = terminalAttrService.findByTerminalId(request.getId());
             for (TerminalAttr terminalAttr : terminalAttrList) {
@@ -158,7 +162,7 @@ public class TerminalController extends CommonController {
                 for (TerminalAttr terminalAttr : terminalAttrList) {
                     DeviceAttr attr = deviceAttrService.findById(terminalAttr.getDeviceattrId());
                     DeviceAttrType deviceAttrType = deviceAttrTypeService.findById(attr.getAttrtypeId());
-                    ObjectDevice device = objectDeviceService.findById(attr.getDeviceId());
+                    Device device = deviceService.findById(attr.getDeviceId());
                     String dName = device.getCode();
                     if (device.getIndex() != null) {
                         dName = dName + device.getIndex();

@@ -27,7 +27,7 @@ public class DeviceController extends CommonController {
     @Autowired
     WaterObjectService waterObjectService;
     @Autowired
-    ObjectDeviceService objectDeviceService;
+    DeviceService deviceService;
     @Autowired
     DeviceAttrService deviceAttrService;
     @Autowired
@@ -44,10 +44,10 @@ public class DeviceController extends CommonController {
     @ResponseBody
     public String list(@RequestBody DeviceListRequest request) {
         JSONObject jsonObject = new JSONObject();
-        List<ObjectDevice> deviceList = objectDeviceService.findByObjectIdAndGroupId(request.getObjectId(),request.getGroupId());
+        List<Device> deviceList = deviceService.findByObjectIdAndGroupId(request.getObjectId(),request.getGroupId());
         if (deviceList != null) {
             JSONArray deviceArray = new JSONArray();
-            for (ObjectDevice device : deviceList) {
+            for (Device device : deviceList) {
                 JSONObject item = JSONUtil.changeKey(JSONUtil.fromObject(device, "*"), JSONUtil.TYPE_UNDERLINE);
                 List<DeviceAttr> deviceAttrList = deviceAttrService.findByDeviceId(device.getId());
                 item.put("attrs", JSONUtil.fromList(deviceAttrList, "id attrtypeId", JSONUtil.TYPE_UNDERLINE));
@@ -69,7 +69,7 @@ public class DeviceController extends CommonController {
         JSONObject jsonObject = new JSONObject();
         WaterObject waterObject = waterObjectService.findById(request.getObjectId());
         DeviceType deviceType = deviceTypeService.findById(request.getDevicetypeId());
-        List<ObjectDevice> objectDeviceList = objectDeviceService.findByObjectIdAndDevicetypeId(request.getObjectId(), request.getDevicetypeId());
+        List<Device> objectDeviceList = deviceService.findByObjectIdAndDevicetypeId(request.getObjectId(), request.getDevicetypeId());
         if (waterObject == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_OBJECT_NOT_EXIST, jsonObject);
         } else if (deviceType == null) {
@@ -97,13 +97,13 @@ public class DeviceController extends CommonController {
                 tableName = tableName + "" + index;
             }
             if (RemoteDataBaseManager.createTable(tableCreator, tableName, deviceAttrTypeList)) {
-                ObjectDevice objectDevice = new ObjectDevice();
+                Device objectDevice = new Device();
                 objectDevice.setCode(deviceType.getTableName());
                 objectDevice.setIndex(index);
                 objectDevice.setObjectId(request.getObjectId());
                 objectDevice.setDevicetypeId(request.getDevicetypeId());
                 objectDevice.setGroupId(request.getGroupId());
-                int id = objectDeviceService.save(objectDevice);
+                int id = deviceService.save(objectDevice);
                 for (Object attr : request.getAttrs()) {
                     DeviceAttr deviceAttr = new DeviceAttr();
                     deviceAttr.setAttrtypeId((Integer) ((JSONObject)attr).get("attrtype_id"));
@@ -129,7 +129,7 @@ public class DeviceController extends CommonController {
     @ResponseBody
     public String update(@RequestBody DeviceUpdateRequest request) {
         JSONObject jsonObject = new JSONObject();
-        ObjectDevice objectDevice = objectDeviceService.findById(request.getId());
+        Device objectDevice = deviceService.findById(request.getId());
         if (objectDevice == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_NOT_EXIST, jsonObject);
         } else {
@@ -173,14 +173,14 @@ public class DeviceController extends CommonController {
     @ResponseBody
     public String delete(@RequestBody DeviceDeleteRequest request) {
         JSONObject jsonObject = new JSONObject();
-        ObjectDevice objectDevice = objectDeviceService.findById(request.getId());
+        Device objectDevice = deviceService.findById(request.getId());
         if (objectDevice == null) {
             return responseJSON(MyError.ERROR_CODE_ALREADY_OR_NOT_EXIST, MyError.MESSAGE_DEVICE_NOT_EXIST, jsonObject);
         } else {
             WaterObject waterObject = waterObjectService.findById(objectDevice.getObjectId());
             Host host = hostService.findById(waterObject.getHostId());
             if (RemoteDataBaseManager.connectDataBase(host, waterObject.getDatabaseName()).deleteTable(objectDevice.getCode() + objectDevice.getIndex())) {
-                objectDeviceService.deleteById(request.getId());
+                deviceService.deleteById(request.getId());
                 List<DeviceAttr> attrList = deviceAttrService.findByDeviceId(request.getId());
                 if (attrList != null && attrList.size() > 0) {
                     for (DeviceAttr attr : attrList) {

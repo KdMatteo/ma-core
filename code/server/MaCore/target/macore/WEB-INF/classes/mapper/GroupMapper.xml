@@ -17,6 +17,7 @@
     -->
     c_id, c_object_id, c_name
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--
       WARNING - @mbggenerated
@@ -27,6 +28,7 @@
     from t_group
     where c_id = #{id,jdbcType=INTEGER}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbggenerated

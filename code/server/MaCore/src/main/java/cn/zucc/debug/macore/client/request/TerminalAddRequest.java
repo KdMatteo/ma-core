@@ -6,13 +6,11 @@ public class TerminalAddRequest {
 
     private Integer objectId;
 
+    private Integer terminalIpId;
+
     private String name;
 
     private String code;
-
-    private String ip;
-
-    private Integer port;
 
     private JSONArray attrs;
 
@@ -40,20 +38,12 @@ public class TerminalAddRequest {
         this.code = code;
     }
 
-    public String getIp() {
-        return ip;
+    public Integer getTerminalIpId() {
+        return terminalIpId;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-
-    public Integer getPort() {
-        return port;
-    }
-
-    public void setPort(Integer port) {
-        this.port = port;
+    public void setTerminal_ip_id(Integer terminalIpId) {
+        this.terminalIpId = terminalIpId;
     }
 
     public JSONArray getAttrs() {

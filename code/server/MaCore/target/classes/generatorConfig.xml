@@ -17,7 +17,7 @@
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/macore" userId="root" password="123456">
+                        connectionURL="jdbc:mysql://120.78.74.186:3306/macore" userId="root" password="123456">
         </jdbcConnection>
         <javaTypeResolver>
             <!-- This property is used to specify whether MyBatis Generator should
@@ -74,9 +74,9 @@
             <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;WaterObject,Integer&gt;" />-->
             <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
         <!--</table>-->
-        <!--<table tableName="t_object_device" domainObjectName="ObjectDevice" enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--<table tableName="t_object_device" domainObjectName="Device" enableCountByExample="false" enableUpdateByExample="false"-->
                <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;ObjectDevice,Integer&gt;" />-->
+            <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Device,Integer&gt;" />-->
             <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
         <!--</table>-->
 
@@ -91,15 +91,21 @@
             <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;User,Integer&gt;" />-->
             <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
         <!--</table>-->
-        <table tableName="t_terminal" domainObjectName="Terminal" enableCountByExample="false" enableUpdateByExample="false"
+       <!-- <table tableName="t_terminal" domainObjectName="Terminal" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;Terminal,Integer&gt;" />
             <columnRenamingRule searchString="^c" replaceString=""/>
-        </table>
+        </table>-->
         <!--<table tableName="t_terminal_attr" domainObjectName="TerminalAttr" enableCountByExample="false" enableUpdateByExample="false"-->
                <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
             <!--<property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;TerminalAttr,Integer&gt;" />-->
             <!--<columnRenamingRule searchString="^c" replaceString=""/>-->
         <!--</table>-->
+
+        <table tableName="t_terminal_ip" domainObjectName="TerminalIp" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="rootInterface" value="cn.zucc.debug.frame.ssm.BaseMapper&lt;TerminalIp,Integer&gt;" />
+            <columnRenamingRule searchString="^c" replaceString=""/>
+        </table>
     </context>
 </generatorConfiguration>

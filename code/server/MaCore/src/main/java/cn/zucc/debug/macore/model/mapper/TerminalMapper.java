@@ -58,4 +58,6 @@ public interface TerminalMapper extends BaseMapper<Terminal, Integer> {
     Terminal selectByObjectIdAndCode(@Param("objectId") Integer objectId, @Param("code") String code);
 
     List<Terminal> selectByObjectId(@Param("objectId") Integer objectId);
+
+    List<Terminal> selectByTerminalIpId(@Param("terminalIpId") Integer terminalIpId);
 }

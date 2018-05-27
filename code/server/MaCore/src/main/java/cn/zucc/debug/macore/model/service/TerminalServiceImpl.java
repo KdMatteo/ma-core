@@ -29,4 +29,9 @@ public class TerminalServiceImpl extends BaseServiceImpl<Terminal, Integer> impl
     public List<Terminal> findByObjectId(Integer objectId) {
         return terminalMapper.selectByObjectId(objectId);
     }
+
+    @Override
+    public List<Terminal> findByTerminalIpId(Integer terminalIpId) {
+        return terminalMapper.selectByTerminalIpId(terminalIpId);
+    }
 }

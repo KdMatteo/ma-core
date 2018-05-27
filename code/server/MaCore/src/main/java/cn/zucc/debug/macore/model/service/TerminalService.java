@@ -8,4 +8,5 @@ import java.util.List;
 public interface TerminalService extends BaseService<Terminal, Integer> {
     Terminal findByObjectIdAndCode(Integer objectId, String code);
     List<Terminal> findByObjectId(Integer objectId);
+    List<Terminal> findByTerminalIpId(Integer terminalIpId);
 }
